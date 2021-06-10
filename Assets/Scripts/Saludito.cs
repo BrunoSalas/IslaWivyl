@@ -8,6 +8,7 @@ public class Saludito : MonoBehaviour
     void Start()
     {
         Debug.Log("hola");
+        Debug.Log("Chris");
     }
 
     // Update is called once per frame
