@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Saludito : MonoBehaviour
+public class DestruccionAsset : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("hola");
-        Debug.Log("Chris");
-	Debug.Log("Gaaaaaaa");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
