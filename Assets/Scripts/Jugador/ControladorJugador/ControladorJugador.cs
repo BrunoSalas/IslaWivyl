@@ -145,6 +145,10 @@ public class ControladorJugador : MonoBehaviour
             Destroy(other);
             AldeanoPatoProbabilidad();
         }
+        if (other.gameObject.CompareTag("TrampaFoso"))
+        {
+            modeloJugador.vida -= 100;
+        }
     }
   
 }

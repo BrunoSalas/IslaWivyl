@@ -9,6 +9,7 @@ TagManager:
   - Trampa1
   - Trampa2
   - CheckPoint
+  - TrampaFoso
   layers:
   - Default
   - TransparentFX
