@@ -22,6 +22,8 @@ public class ModeloJugador : MonoBehaviour
     public Vector3 spawnPoint;
     public GameObject objCheckpoint;
     public float aceleracion;
+    public bool lanzallamas;
+    public bool cuerpoaCuerpo;
     void Start()
     {
         enElSuelo = true;

@@ -11,6 +11,9 @@ TagManager:
   - CheckPoint
   - TrampaFoso
   - GroundCheck
+  - Aldeano
+  - Lanzallama
+  - CuerpoaCuerpo
   layers:
   - Default
   - TransparentFX

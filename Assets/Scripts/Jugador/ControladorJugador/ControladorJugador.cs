@@ -8,7 +8,6 @@ public class ControladorJugador : MonoBehaviour
 {
     public ModeloJugador modeloJugador;
     private PowerDucks powerDucks;
-    private TrampaCuevaPiedras trampaPiedras;
     private Transform groundCheck;
     private float groundRad = 0.4f;
     private float velocidadCorreroriginal;
@@ -26,7 +25,6 @@ public class ControladorJugador : MonoBehaviour
         modeloJugador = GetComponent<ModeloJugador>();
         powerDucks = GetComponent<PowerDucks>();
 
-        trampaPiedras = GetComponent<TrampaCuevaPiedras>();
     }
 
 
@@ -109,7 +107,6 @@ public class ControladorJugador : MonoBehaviour
     {
         if (modeloJugador.encimaDeTrampa == true)
         {
-            trampaPiedras.TrampaSegundo();//Herencia de la clase TrampaCuevaPiedras
             modeloJugador.encimaDeTrampa = false;//Herencia de la clase ModeloJugador
         }
     }
@@ -165,6 +162,28 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.vida -= 100;
         }
+        if (other.gameObject.CompareTag("Lanzallama"))
+        {
+            modeloJugador.lanzallamas = true;
+        }
+
+        if (other.gameObject.CompareTag("CuerpoaCuerpo"))
+        {
+            modeloJugador.cuerpoaCuerpo = true;
+        }
     }
-  
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Lanzallama"))
+        {
+            modeloJugador.lanzallamas = false;
+        }
+
+        if (other.gameObject.CompareTag("CuerpoaCuerpo"))
+        {
+            modeloJugador.cuerpoaCuerpo = false;
+        }
+    }
+
 }

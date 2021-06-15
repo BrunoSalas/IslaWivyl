@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour
     public GameObject targetJugador;
     public GameObject rocaVolcanica;
     public GameObject targerAdelante;
+    public ModeloJugador modeloJugador;
     private int creado;
     private int parado;
     private float targetAdelanteX;
@@ -17,12 +18,19 @@ public class Boss : MonoBehaviour
     public float targetJugadorZ;
     private float tiempo = 1;
     private float tiempoGuardado;
+    private int tiempoAtaqueCuerpoaCuerpo;
+    private float couldwCuerpoaCuerpo;
     public Transform jugador;
     UnityEngine.AI.NavMeshAgent enemigo;
-    private bool dentro;
+    public bool colliderCuerpoCuerpo;
+    public bool colliderLanzaLlama;
     public float GuardadoX;
     public float GuardadoY;
     public float GuardadoZ;
+    private bool mortero;
+    private bool lanzallamas;
+    private bool cuerpoCuerpo;
+    private float tiempoDeAtaques;
 
     private void Start()
     {
@@ -36,6 +44,7 @@ public class Boss : MonoBehaviour
         AtaqueCercano();
         AtaqueCuerpoCuerpo();
         Seguimiento();
+        SistemaDeAtaques();
 
     }
 
@@ -119,44 +128,110 @@ public class Boss : MonoBehaviour
         }
     }
 
+    public void SistemaDeAtaques()
+    {
+        tiempoDeAtaques = tiempoDeAtaques + 1;
+
+        colliderLanzaLlama = modeloJugador.lanzallamas;
+        colliderCuerpoCuerpo = modeloJugador.cuerpoaCuerpo;
+
+        bool cinco = false;
+        bool seis = false;
+        bool dos = false;
+
+        if (tiempoDeAtaques % 6 == 0 && cinco == false && dos == false)
+        {
+            lanzallamas = true;
+
+            seis = true;
+        }
+
+        else
+        {
+            lanzallamas = false;
+
+            seis = false;
+
+        }
+
+        if (tiempoDeAtaques % 5 == 0 && dos == false && seis == false)
+        {
+            mortero = true;
+
+            cinco = true;
+        }
+
+        else
+        {
+            mortero = false;
+
+            cinco = false;
+        }
+
+        if (tiempoDeAtaques % 2 == 0 && seis == false && cinco == false)
+        {
+            cuerpoCuerpo = true;
+
+            dos = true;
+        }
+        else
+        {
+            cuerpoCuerpo = false;
+
+            dos = false;
+        }
+    }
+
     public void AtaqueCercano()
     {
-        
+        if (cuerpoCuerpo == false)
+        { }
+
     }
 
     public void AtaqueCuerpoCuerpo()
     {
-        
+        if (colliderCuerpoCuerpo == true && cuerpoCuerpo == true)
+        {
+            tiempoAtaqueCuerpoaCuerpo = tiempoAtaqueCuerpoaCuerpo + 1;
+
+            if (tiempoAtaqueCuerpoaCuerpo <= 2f)
+            {
+                modeloJugador.maximaVida = modeloJugador.maximaVida - 10;
+
+                couldwCuerpoaCuerpo = 0;
+
+            }
+
+            else
+            {
+
+                couldwCuerpoaCuerpo = couldwCuerpoaCuerpo + 1 * Time.deltaTime;
+
+                if (couldwCuerpoaCuerpo >= 2f)
+                {
+                    tiempoAtaqueCuerpoaCuerpo = 0;
+
+                }
+            }
+
+            //enemigo.destination = this.transform.position;
+        }
+
+        else
+        {
+            cuerpoCuerpo = false;
+        }
+
     }
 
     public void Seguimiento()
     {
-
-       if (!dentro)
-       {
-         enemigo.destination = jugador.position;
-       }
-       if (dentro)
-       {
-         enemigo.destination = this.transform.position;
-       }
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
+        if (colliderCuerpoCuerpo == false)
         {
-            dentro = true;
+            enemigo.destination = jugador.position;
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            dentro = false;
-        }
     }
 
     /*
