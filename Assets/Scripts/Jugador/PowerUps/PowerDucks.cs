@@ -6,6 +6,9 @@ public class PowerDucks : MonoBehaviour
 {
     private ModeloJugador modeloJugador;
 
+    public bool tienepato1;
+    public bool tienepato2;
+    public bool tienepato3;
     public float curacion;
     public float velocidadAumentada;
     public float velocidadGuardado;

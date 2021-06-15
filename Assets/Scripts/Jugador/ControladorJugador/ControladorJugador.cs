@@ -9,9 +9,18 @@ public class ControladorJugador : MonoBehaviour
     public ModeloJugador modeloJugador;
     private PowerDucks powerDucks;
     private TrampaCuevaPiedras trampaPiedras;
+    private Transform groundCheck;
+    private float groundRad = 0.4f;
+    private float velocidadCorreroriginal;
+    private float velocidadCorrerMult=1f;
+    private RaycastHit aldeano;
+    private Rigidbody rb_mj;
 
     void Start()
     {
+        rb_mj = modeloJugador.rb;
+        velocidadCorreroriginal = modeloJugador.velocidadMovCorrer;
+        groundCheck = GameObject.FindGameObjectWithTag("GroundCheck").transform;
         modeloJugador.vida = modeloJugador.maximaVida;
         modeloJugador = GetComponent<ModeloJugador>();
         powerDucks = GetComponent<PowerDucks>();
@@ -22,11 +31,31 @@ public class ControladorJugador : MonoBehaviour
 
     void Update()
     {
-        Movimiento();
-        Correr();
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            velocidadCorrerMult = modeloJugador.velocidadMovCorrer;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            velocidadCorrerMult = 1;
+        }
         UsoDePower();
         Trampas();
 
+    }
+    private void FixedUpdate()
+    {
+        modeloJugador.enElSuelo = Physics.CheckSphere(groundCheck.position, groundRad, modeloJugador.groundMask);
+        //float velocidadMov_mj = modeloJugador.velocidadMov; //Herencia de la clase ModeloJugador
+        float movHorizontal = Input.GetAxisRaw("Horizontal") * modeloJugador.velocidadMov * velocidadCorrerMult;
+        float movVertical = Input.GetAxisRaw("Vertical") * modeloJugador.velocidadMov * velocidadCorrerMult;
+
+        rb_mj.velocity = (transform.forward * movVertical) + (transform.right * movHorizontal) + (transform.up * rb_mj.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Space) && modeloJugador.enElSuelo)
+        {
+            rb_mj.AddForce(0, modeloJugador.empujeSalto, 0, ForceMode.Impulse);
+        }
     }
     //Función para modificar la vida
     void ModificadorVida(bool aumento,float valor)
@@ -72,33 +101,7 @@ public class ControladorJugador : MonoBehaviour
         }
     }
     
-    void Movimiento()
-    {
-        Rigidbody rb_mj = modeloJugador.rb; //Herencia de la clase ModeloJugador
-        float velocidadMov_mj = modeloJugador.velocidadMov; //Herencia de la clase ModeloJugador
-        float movHorizontal = Input.GetAxisRaw("Horizontal");
-        float movVertical = Input.GetAxisRaw("Vertical");
 
-        if (movHorizontal != 0.0f || movVertical != 0.0f)
-        {
-             Vector3 direccion = transform.forward * movVertical + transform.right * movHorizontal;
-
-           rb_mj.MovePosition(transform.position + direccion* velocidadMov_mj * Time.deltaTime);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            modeloJugador.enElSuelo = false; //Herencia de la clase ModeloJugador
-            rb_mj.AddForce(0, modeloJugador.empujeSalto, 0, ForceMode.Impulse);
-
-        }
-    }
-
-    void Correr()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift)){
-            modeloJugador.velocidadMov += modeloJugador.aceleracion;
-        }
-    }
     void AldeanoPatoProbabilidad()
     {
         if (Random.Range(1f, 100f) < modeloJugador.AldeanoRNG)

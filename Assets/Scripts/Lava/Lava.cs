@@ -19,9 +19,9 @@ public class Lava : MonoBehaviour
     
     void Update()
     {
-        Vector3 transformLava = transform.position;
-        Vector3 transformObjetivo = objetivo.position;
-        transform.position = Vector3.MoveTowards(transformLava, transformObjetivo, fuerza);
+        //Vector3 transformLava = transform.position;
+        //Vector3 transformObjetivo = objetivo.position;
+        //transform.position = Vector3.MoveTowards(transformLava, transformObjetivo, fuerza);
     }
 
 
