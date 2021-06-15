@@ -13,6 +13,7 @@ public class ControladorJugador : MonoBehaviour
     private float groundRad = 0.4f;
     private float velocidadCorreroriginal;
     private float velocidadCorrerMult=1f;
+    private float velocidadPato1Mult=1f;
     private RaycastHit aldeano;
     private Rigidbody rb_mj;
 
@@ -39,6 +40,10 @@ public class ControladorJugador : MonoBehaviour
         {
             velocidadCorrerMult = 1;
         }
+        if (Input.GetKeyDown(KeyCode.Space) && modeloJugador.enElSuelo)
+        {
+            rb_mj.AddForce(0, modeloJugador.empujeSalto, 0, ForceMode.Impulse);
+        }
         UsoDePower();
         Trampas();
 
@@ -47,15 +52,12 @@ public class ControladorJugador : MonoBehaviour
     {
         modeloJugador.enElSuelo = Physics.CheckSphere(groundCheck.position, groundRad, modeloJugador.groundMask);
         //float velocidadMov_mj = modeloJugador.velocidadMov; //Herencia de la clase ModeloJugador
-        float movHorizontal = Input.GetAxisRaw("Horizontal") * modeloJugador.velocidadMov * velocidadCorrerMult;
-        float movVertical = Input.GetAxisRaw("Vertical") * modeloJugador.velocidadMov * velocidadCorrerMult;
+        float movHorizontal = Input.GetAxisRaw("Horizontal") * modeloJugador.velocidadMov * velocidadCorrerMult *velocidadPato1Mult;
+        float movVertical = Input.GetAxisRaw("Vertical") * modeloJugador.velocidadMov * velocidadCorrerMult * velocidadPato1Mult;
 
         rb_mj.velocity = (transform.forward * movVertical) + (transform.right * movHorizontal) + (transform.up * rb_mj.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space) && modeloJugador.enElSuelo)
-        {
-            rb_mj.AddForce(0, modeloJugador.empujeSalto, 0, ForceMode.Impulse);
-        }
+
     }
     //Función para modificar la vida
     void ModificadorVida(bool aumento,float valor)
@@ -82,11 +84,22 @@ public class ControladorJugador : MonoBehaviour
 
     public void UsoDePower()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && modeloJugador.patos >= 1)//Herencia de la clase ModeloJugador
+
+        if (Input.GetKeyDown(KeyCode.Q)&&(powerDucks.ListoPato1)) // && modeloJugador.patos >= 1)//Herencia de la clase ModeloJugador
         {
-            powerDucks.PoderDos();//Herencia de la clase PowerDucks
-            powerDucks.PoderUno();//Herencia de la clase PowerDucks
+            powerDucks.onEffPato1 = true;
+            powerDucks.ListoPato1 = false;
+            //powerDucks.PoderDos();//Herencia de la clase PowerDucks 
+            //powerDucks.PoderUno();//Herencia de la clase PowerDucks
             
+        }
+        if (powerDucks.onEffPato1)
+        {
+            velocidadPato1Mult = powerDucks.multiplicadorVelocidadPato1;
+        }
+        else
+        {
+            velocidadPato1Mult = 1;
         }
             
     }
