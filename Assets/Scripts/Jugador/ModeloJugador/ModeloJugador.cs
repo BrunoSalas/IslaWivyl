@@ -9,7 +9,8 @@ public class ModeloJugador : MonoBehaviour
     public LayerMask groundMask;
     public float AldeanoRNG;
     public int habilidad;
-    public int patos;
+    public int patosCura;
+    
     public float vida;
     public float maximaVida;
     public float velocidadMov;

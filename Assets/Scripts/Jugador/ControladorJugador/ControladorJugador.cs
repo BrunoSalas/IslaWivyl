@@ -85,22 +85,12 @@ public class ControladorJugador : MonoBehaviour
     public void UsoDePower()
     {
 
-        if (Input.GetKeyDown(KeyCode.Q)&&(powerDucks.ListoPato1)) // && modeloJugador.patos >= 1)//Herencia de la clase ModeloJugador
+        if (Input.GetKeyDown(KeyCode.Q) && (powerDucks.patosListos)) // && modeloJugador.patos >= 1)//Herencia de la clase ModeloJugador
         {
-            powerDucks.onEffPato1 = true;
-            powerDucks.ListoPato1 = false;
-            //powerDucks.PoderDos();//Herencia de la clase PowerDucks 
-            //powerDucks.PoderUno();//Herencia de la clase PowerDucks
+            powerDucks.patosListos = true;
+            StartCoroutine(powerDucks.patosCooldown());
+        }
             
-        }
-        if (powerDucks.onEffPato1)
-        {
-            velocidadPato1Mult = powerDucks.multiplicadorVelocidadPato1;
-        }
-        else
-        {
-            velocidadPato1Mult = 1;
-        }
             
     }
 
