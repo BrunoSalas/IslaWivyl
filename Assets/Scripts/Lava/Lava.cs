@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    public float fuerza = 10;
+    public float fuerza = 15;
     public Transform objetivo;
     public float tiempo;
     public float tiempoDaño;

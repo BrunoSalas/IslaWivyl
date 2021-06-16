@@ -7,6 +7,7 @@ using UnityEngine;
 public class ControladorJugador : MonoBehaviour
 {
     public ModeloJugador modeloJugador;
+    private TrampaManager trampaManager;
     private PowerDucks powerDucks;
     private Transform groundCheck;
     private float groundRad = 0.4f;
@@ -24,6 +25,7 @@ public class ControladorJugador : MonoBehaviour
         modeloJugador.vida = modeloJugador.maximaVida;
         modeloJugador = GetComponent<ModeloJugador>();
         powerDucks = GetComponent<PowerDucks>();
+        //trampaManager = GetComponent<TrampaManager>(); Falta probar por temas de mi visual crasheado
 
     }
 
@@ -161,6 +163,7 @@ public class ControladorJugador : MonoBehaviour
         if (other.gameObject.CompareTag("TrampaFoso"))
         {
             modeloJugador.vida -= 100;
+            //trampaManager.numeroTrampa = 2; Falta probar por tema de unity crasheado
         }
         if (other.gameObject.CompareTag("Lanzallama"))
         {
