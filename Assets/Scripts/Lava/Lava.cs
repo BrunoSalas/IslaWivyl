@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    public float fuerza = 15;
-    public Transform objetivo;
+    public float fuerza;
+    Vector3 posicionTemporal;
     public float tiempo;
     public float tiempoDaño;
     public float cantidadDaño = 20;
-    
+    public ModeloJugador modeloJugador;
+
     void Start()
     {
         
@@ -19,9 +19,9 @@ public class Lava : MonoBehaviour
     
     void Update()
     {
-        //Vector3 transformLava = transform.position;
-        //Vector3 transformObjetivo = objetivo.position;
-        //transform.position = Vector3.MoveTowards(transformLava, transformObjetivo, fuerza);
+        posicionTemporal = transform.localScale;
+        posicionTemporal.z += 3 * Time.deltaTime;
+        transform.localScale = posicionTemporal;
     }
 
 
@@ -32,8 +32,7 @@ public class Lava : MonoBehaviour
             if(tiempo >= tiempoDaño)
             {
                 tiempo -= tiempoDaño;
-                ModeloJugador vida = dano.GetComponent<ModeloJugador>();
-                vida.vida -= cantidadDaño;
+                modeloJugador.vida -= cantidadDaño;
             }
             tiempo += Time.deltaTime;
         }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6241421268888629195}
   m_Layer: 0
   m_Name: Arbol3
-  m_TagString: Untagged
+  m_TagString: Arbol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

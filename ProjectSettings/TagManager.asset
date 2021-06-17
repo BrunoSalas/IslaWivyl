@@ -15,6 +15,7 @@ TagManager:
   - Lanzallama
   - CuerpoaCuerpo
   - RocaVolcanica
+  - Arbol
   layers:
   - Default
   - TransparentFX

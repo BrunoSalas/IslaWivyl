@@ -19,6 +19,7 @@ public class Boss : MonoBehaviour
     private float tiempo = 1;
     private float tiempoGuardado;
     private int tiempoAtaqueCuerpoaCuerpo;
+    private float tiempoAtaqueLanzallamas;
     private float couldwCuerpoaCuerpo;
     public Transform jugador;
     UnityEngine.AI.NavMeshAgent enemigo;
@@ -41,7 +42,7 @@ public class Boss : MonoBehaviour
     private void Update()
     {
         AtaqueLejano();
-        AtaqueCercano();
+        AtaqueLanzallamas();
         AtaqueCuerpoCuerpo();
         Seguimiento();
         SistemaDeAtaques();
@@ -182,10 +183,18 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void AtaqueCercano()
+    public void AtaqueLanzallamas()
     {
-        if (cuerpoCuerpo == false)
-        { }
+        if (colliderLanzaLlama == true)
+        {
+            tiempoAtaqueLanzallamas = tiempoAtaqueLanzallamas + 1 * Time.deltaTime;
+            if (tiempoAtaqueLanzallamas >= 1f)
+            {
+                modeloJugador.vida -= 10;
+
+                tiempoAtaqueLanzallamas = 0;
+            }
+        }
 
     }
 
@@ -197,7 +206,7 @@ public class Boss : MonoBehaviour
 
             if (tiempoAtaqueCuerpoaCuerpo <= 2f)
             {
-                modeloJugador.maximaVida = modeloJugador.maximaVida - 10;
+                modeloJugador.vida = modeloJugador.vida - 10;
 
                 couldwCuerpoaCuerpo = 0;
 
@@ -215,7 +224,7 @@ public class Boss : MonoBehaviour
                 }
             }
 
-            //enemigo.destination = this.transform.position;
+            enemigo.destination = this.transform.position;
         }
 
         else
@@ -230,6 +239,11 @@ public class Boss : MonoBehaviour
         if (colliderCuerpoCuerpo == false)
         {
             enemigo.destination = jugador.position;
+        }
+
+        else if (cuerpoCuerpo == true)
+        {
+            enemigo.destination = this.transform.position;
         }
 
     }
