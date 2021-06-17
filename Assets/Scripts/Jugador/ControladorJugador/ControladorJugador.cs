@@ -7,7 +7,7 @@ using UnityEngine;
 public class ControladorJugador : MonoBehaviour
 {
     public ModeloJugador modeloJugador;
-    private TrampaManager trampaManager;
+    public TrampaManager trampaManager;
     private PowerDucks powerDucks;
     private Transform groundCheck;
     private float groundRad = 0.4f;
@@ -25,7 +25,7 @@ public class ControladorJugador : MonoBehaviour
         modeloJugador.vida = modeloJugador.maximaVida;
         modeloJugador = GetComponent<ModeloJugador>();
         powerDucks = GetComponent<PowerDucks>();
-        //trampaManager = GetComponent<TrampaManager>(); Falta probar por temas de mi visual crasheado
+        
 
     }
 
@@ -126,12 +126,18 @@ public class ControladorJugador : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Trampa1"))
         {
-            Debug.Log("Ya veremos");
+            trampaManager.numeroTrampa = 1;
         }
         if (other.gameObject.CompareTag("Trampa2"))
         {
-            Debug.Log("Ya veremos");
+            trampaManager.numeroTrampa = 2;
         }
+
+        if (other.gameObject.CompareTag("Trampa3"))
+        {
+            trampaManager.numeroTrampa = 3;
+        }
+
         if (other.gameObject.CompareTag("CheckPoint"))
         {
             modeloJugador.spawnPoint = modeloJugador.objCheckpoint.transform.position;
@@ -155,11 +161,12 @@ public class ControladorJugador : MonoBehaviour
             Destroy(other);
             AldeanoPatoProbabilidad();
         }
-        if (other.gameObject.CompareTag("TrampaFoso"))
+        /*if (other.gameObject.CompareTag("TrampaFoso"))
         {
             modeloJugador.vida -= 100;
             //trampaManager.numeroTrampa = 2; Falta probar por tema de unity crasheado
         }
+        */
         if (other.gameObject.CompareTag("Lanzallama"))
         {
             modeloJugador.lanzallamas = true;

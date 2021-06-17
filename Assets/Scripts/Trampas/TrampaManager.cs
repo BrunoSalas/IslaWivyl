@@ -23,15 +23,18 @@ public class TrampaManager : MonoBehaviour
         switch (numeroTrampa)
         {
             case 1:
-                Debug.Log("Instanciar cocos que hagan daño al chocar con el collider del arbol");
+                Debug.Log("trampa 1 activada");
+                numeroTrampa = 0;
                 break;
 
             case 2:
-                Debug.Log("Buscar la manera de pasar el daño ya puesto por collision en player a aca");
+                Debug.Log("trampa 2 activada");
+                numeroTrampa = 0;
                 break;
 
             case 3:
-                Debug.Log("Al pasar por collider con tag de t3 hacer todo lo acordado");
+                Debug.Log("trampa 3 activada");
+                numeroTrampa = 0;
                 break;
 
         }
