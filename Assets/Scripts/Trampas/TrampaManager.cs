@@ -6,7 +6,7 @@ using UnityEngine;
 public class TrampaManager : MonoBehaviour
 {
     
-    int numeroTrampa = 0; //Modificar la variable desde el player por colision con cada trampa
+    public int numeroTrampa = 0; //Modificar la variable desde el player por colision con cada trampa
     void Start()
     {
         
