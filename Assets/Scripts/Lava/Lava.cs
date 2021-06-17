@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
     public float fuerza = 15;
-    public Transform objetivo;
+    Vector3 posicionTemporal;
     public float tiempo;
     public float tiempoDaño;
     public float cantidadDaño = 20;
@@ -19,9 +18,9 @@ public class Lava : MonoBehaviour
     
     void Update()
     {
-        //Vector3 transformLava = transform.position;
-        //Vector3 transformObjetivo = objetivo.position;
-        //transform.position = Vector3.MoveTowards(transformLava, transformObjetivo, fuerza);
+        posicionTemporal = transform.localScale;
+        posicionTemporal.z += Time.deltaTime;
+        transform.localScale = posicionTemporal;
     }
 
 
