@@ -136,6 +136,11 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.spawnPoint = modeloJugador.objCheckpoint.transform.position;
         }
+
+        if (other.gameObject.CompareTag("RocaVolcanica"))
+        {
+            modeloJugador.maximaVida = modeloJugador.maximaVida - 100;
+        }
         
     }
 
