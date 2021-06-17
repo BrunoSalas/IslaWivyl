@@ -9,7 +9,7 @@ public class Lava : MonoBehaviour
     public float tiempo;
     public float tiempoDaño;
     public float cantidadDaño = 20;
-    public float gaa;
+    public ModeloJugador modeloJugador;
     
     void Start()
     {
@@ -33,8 +33,7 @@ public class Lava : MonoBehaviour
             if(tiempo >= tiempoDaño)
             {
                 tiempo -= tiempoDaño;
-                ModeloJugador vida = dano.GetComponent<ModeloJugador>();
-                vida.vida -= cantidadDaño;
+                modeloJugador.vida -= cantidadDaño;
             }
             tiempo += Time.deltaTime;
         }
