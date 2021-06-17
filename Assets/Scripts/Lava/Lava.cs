@@ -10,7 +10,6 @@ public class Lava : MonoBehaviour
     public float tiempoDaño;
     public float cantidadDaño = 20;
     public ModeloJugador modeloJugador;
-
     void Start()
     {
         
@@ -20,7 +19,7 @@ public class Lava : MonoBehaviour
     void Update()
     {
         posicionTemporal = transform.localScale;
-        posicionTemporal.z += 3 * Time.deltaTime;
+        posicionTemporal.z += Time.deltaTime;
         transform.localScale = posicionTemporal;
     }
 
