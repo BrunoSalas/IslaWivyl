@@ -13,7 +13,7 @@ public class ControladorJugador : MonoBehaviour
     private float groundRad = 0.4f;
     private float velocidadCorreroriginal;
     private float velocidadCorrerMult=1f;
-    private float velocidadPato1Mult=1f;
+    
     private RaycastHit aldeano;
     private Rigidbody rb_mj;
 
@@ -52,8 +52,8 @@ public class ControladorJugador : MonoBehaviour
     {
         modeloJugador.enElSuelo = Physics.CheckSphere(groundCheck.position, groundRad, modeloJugador.groundMask);
         //float velocidadMov_mj = modeloJugador.velocidadMov; //Herencia de la clase ModeloJugador
-        float movHorizontal = Input.GetAxisRaw("Horizontal") * modeloJugador.velocidadMov * velocidadCorrerMult *velocidadPato1Mult;
-        float movVertical = Input.GetAxisRaw("Vertical") * modeloJugador.velocidadMov * velocidadCorrerMult * velocidadPato1Mult;
+        float movHorizontal = Input.GetAxisRaw("Horizontal") * modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult;
+        float movVertical = Input.GetAxisRaw("Vertical") * modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult;
 
         rb_mj.velocity = (transform.forward * movVertical) + (transform.right * movHorizontal) + (transform.up * rb_mj.velocity.y);
 
@@ -87,8 +87,15 @@ public class ControladorJugador : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && (powerDucks.patosListos)) // && modeloJugador.patos >= 1)//Herencia de la clase ModeloJugador
         {
-            powerDucks.patosListos = true;
             StartCoroutine(powerDucks.patosCooldown());
+            StartCoroutine(powerDucks.patoCura());
+            Debug.Log("PatoCurar");
+        }
+        if (Input.GetKeyDown(KeyCode.E) && (powerDucks.patosListos))
+        {
+            StartCoroutine(powerDucks.patosCooldown());
+            StartCoroutine(powerDucks.patoVeloz());
+            Debug.Log("PatoVElocidad");
         }
             
             
@@ -152,8 +159,8 @@ public class ControladorJugador : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Aldeano"))
         {
-            Destroy(other);
-            AldeanoPatoProbabilidad();
+            Debug.Log("ALDEANO");
+            other.GetComponent<AldeanoScript>().PatoRng(powerDucks);
         }
         if (other.gameObject.CompareTag("TrampaFoso"))
         {

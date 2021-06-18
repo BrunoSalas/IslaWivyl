@@ -15,9 +15,10 @@ public class PowerDucks : MonoBehaviour
     private float originalCooldownPato1Timer;
     public float multiplicadorVelocidadPato1;
     public bool ListoPato1;
-    public bool tienepato1;
-    public bool tienepato2;
-    public bool tienepato3;
+    public float velocidadPato1Mult = 1f;
+    public float patos1;
+    public float patos2;
+    public float patos3;
     public float curacion;
     public float velocidadAumentada;
     public float velocidadGuardado;
@@ -37,46 +38,13 @@ public class PowerDucks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!ListoPato1)
-        {
-            cooldownPatosTimer -= Time.deltaTime;
-            if(cooldownPatosTimer <=0)
-            {
-                ListoPato1 = true;
-                cooldownPatosTimer = originalCooldownPato1Timer;
-            }
-        }
-
-        if(onEffPato1)
-        {
-            effPato1Timer -= Time.deltaTime;
-            if(effPato1Timer<=0)
-            {
-                onEffPato1 = false;
-                effPato1Timer = originalEffPato1Timer;
-            }
-        }
-
-        if (tiempoVelocidadDuracion == true)
-        {
-            tiempo = tiempo + 1 * Time.deltaTime;
-
-            if (tiempo >= limite)
-            {
-                modeloJugador.velocidadMov = velocidadGuardado;//Herencia de la clase modeloJugador
-
-                tiempo = 0;
-
-                tiempoVelocidadDuracion = false;
-
-                usos = 1;
-            }
-        }
+        
     }
 
     public IEnumerator patosCooldown()
     {
-        yield return 10f;
+        patosListos = false;
+        yield return new WaitForSeconds(5f) ;
         patosListos = true;
     }
     public IEnumerator patoCura()
@@ -86,20 +54,24 @@ public class PowerDucks : MonoBehaviour
         {
             modeloJugador.vida = modeloJugador.maximaVida;
         }
-        yield return 5f;
+        yield return new WaitForSeconds(5f);
         modeloJugador.vida += 5;
         if (modeloJugador.vida > modeloJugador.maximaVida)
         {
             modeloJugador.vida = modeloJugador.maximaVida;
         }
-        yield return 5f;
+        yield return new WaitForSeconds(5f);
         modeloJugador.vida += 5;
         if (modeloJugador.vida > modeloJugador.maximaVida)
         {
             modeloJugador.vida = modeloJugador.maximaVida;
         }
-        
-
+    }
+    public IEnumerator patoVeloz()
+    {
+        velocidadPato1Mult = 2;
+        yield return new WaitForSeconds(5f);
+        velocidadPato1Mult = 1;
     }
 
 }
