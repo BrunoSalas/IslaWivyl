@@ -771,7 +771,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!114 &618689872
 MonoBehaviour:
@@ -1138,6 +1138,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4519057840825492460, guid: 35221bf6611097149881bd724e6a8d1e, type: 3}
   m_PrefabInstance: {fileID: 794553886}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &988842330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1873522313620630176, guid: 85646bd79f7cc644cb9ca243c0e506c6, type: 3}
+  m_PrefabInstance: {fileID: 5414030028048445956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1037703566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1236,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1060663558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3693193716022800820, guid: 85646bd79f7cc644cb9ca243c0e506c6, type: 3}
+  m_PrefabInstance: {fileID: 5414030028048445956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1152753113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,16 +1612,23 @@ MonoBehaviour:
   targetJugador: {fileID: 926597741}
   rocaVolcanica: {fileID: 8981052206860186802, guid: 93dca10bb0cb0004cb342968a421dc33, type: 3}
   targerAdelante: {fileID: 518671524}
+  colisionLanzallamas: {fileID: 0}
+  colisionCuerpoaCuerpo: {fileID: 0}
   modeloJugador: {fileID: 1850417961}
   targetJugadorX: 0
   targetJugadorY: 0
   targetJugadorZ: 0
+  tiempoAtaqueCuerpoaCuerpo: 0
+  couldwCuerpoaCuerpo: 0
   jugador: {fileID: 1321844357}
   colliderCuerpoCuerpo: 0
   colliderLanzaLlama: 0
   GuardadoX: 0
   GuardadoY: 0
   GuardadoZ: 0
+  mortero: 0
+  lanzallamas: 0
+  cuerpoCuerpo: 0
 --- !u!195 &1527173063
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3637,6 +3654,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1873522313620630176, guid: 85646bd79f7cc644cb9ca243c0e506c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8353145415124613220, guid: 85646bd79f7cc644cb9ca243c0e506c6, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -3705,6 +3726,14 @@ PrefabInstance:
       propertyPath: targerAdelante
       value: 
       objectReference: {fileID: 518671524}
+    - target: {fileID: 9074641948089802949, guid: 85646bd79f7cc644cb9ca243c0e506c6, type: 3}
+      propertyPath: colisionLanzallamas
+      value: 
+      objectReference: {fileID: 988842330}
+    - target: {fileID: 9074641948089802949, guid: 85646bd79f7cc644cb9ca243c0e506c6, type: 3}
+      propertyPath: colisionCuerpoaCuerpo
+      value: 
+      objectReference: {fileID: 1060663558}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85646bd79f7cc644cb9ca243c0e506c6, type: 3}
 --- !u!1001 &5822913961026888831
