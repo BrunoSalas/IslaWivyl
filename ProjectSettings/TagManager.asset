@@ -17,6 +17,7 @@ TagManager:
   - RocaVolcanica
   - Arbol
   - Trampa3
+  - Crater
   layers:
   - Default
   - TransparentFX

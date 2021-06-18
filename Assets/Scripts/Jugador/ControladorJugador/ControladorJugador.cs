@@ -198,4 +198,13 @@ public class ControladorJugador : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Crater"))
+        {
+            modeloJugador.vida -= 10;
+        }
+        
+    }
+
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RocaVolcanica : MonoBehaviour
 {
+    public GameObject grieta;
+    public bool aparecerGrieta;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,14 +16,27 @@ public class RocaVolcanica : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Grieta();
+    }
+
+    public void Grieta()
+    {
+        if (aparecerGrieta == true)
+        {
+            Vector3 Grieta = new Vector3(transform.position.x, transform.position.y - 0.4f,transform.position.z);
+            
+            Instantiate(grieta, Grieta, transform.rotation);
+
+            Destroy(gameObject);
+
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag( "Piso"))
         {
-            Destroy(gameObject);
+            aparecerGrieta = true;
         }
         if (collision.gameObject.CompareTag("Player"))
         {
