@@ -7,8 +7,8 @@ public class Boss : MonoBehaviour
     public GameObject targetJugador;
     public GameObject rocaVolcanica;
     public GameObject targerAdelante;
-    public GameObject colisionLanzallamas;
-    public GameObject colisionCuerpoaCuerpo;
+    //public GameObject colisionLanzallamas;
+   // public GameObject colisionCuerpoaCuerpo;
     public ModeloJugador modeloJugador;
     private int creado;
     private int parado;
@@ -33,7 +33,7 @@ public class Boss : MonoBehaviour
     public bool mortero;
     public bool lanzallamas;
     public bool cuerpoCuerpo;
-    private float tiempoDeAtaques;
+   // private float tiempoDeAtaques;
 
     private void Start()
     {
@@ -147,16 +147,16 @@ public class Boss : MonoBehaviour
         colliderLanzaLlama = modeloJugador.lanzallamas;
         colliderCuerpoCuerpo = modeloJugador.cuerpoaCuerpo;
 
-        if (tiempoAtaqueLanzallamas < 9f && tiempoAtaqueLanzallamas >= 4f)
+        if (tiempoAtaqueLanzallamas < 9f && tiempoAtaqueLanzallamas > 4f)
         {
             lanzallamas = false;
-            colisionLanzallamas.SetActive(false);
+            //colisionLanzallamas.SetActive(false);
         }
-        else
+       /* else
         {
             colisionLanzallamas.SetActive(true);
         }
-
+       */
         if (tiempo >= 1f && tiempo <= 5f)
         {
             mortero = false;
@@ -213,7 +213,7 @@ public class Boss : MonoBehaviour
                 tiempoAtaqueCuerpoaCuerpo = 0;
 
 
-                colisionCuerpoaCuerpo.SetActive(true);
+                //colisionCuerpoaCuerpo.SetActive(true);
 
                 tiempoAtaqueCuerpoaCuerpo = 0;
 
