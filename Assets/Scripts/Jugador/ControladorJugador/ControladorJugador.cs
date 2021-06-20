@@ -14,6 +14,7 @@ public class ControladorJugador : MonoBehaviour
     private float velocidadCorreroriginal;
     private float velocidadCorrerMult=1f;
     
+    
     private RaycastHit aldeano;
     private Rigidbody rb_mj;
 
@@ -46,6 +47,7 @@ public class ControladorJugador : MonoBehaviour
         }
         UsoDePower();
         Trampas();
+        Interactuar();
 
     }
     private void FixedUpdate()
@@ -97,8 +99,17 @@ public class ControladorJugador : MonoBehaviour
             StartCoroutine(powerDucks.patoVeloz());
             Debug.Log("PatoVElocidad");
         }
-            
-            
+                   
+    }
+
+    public void Interactuar()
+    {
+        if(Input.GetKeyDown(KeyCode.F) && modeloJugador.aldeanoEnRango)
+        {
+            modeloJugador.aldeanoInteractuable.GetComponent<AldeanoScript>().PatoRng(powerDucks);
+            Destroy(modeloJugador.aldeanoInteractuable);
+            modeloJugador.UiManaguer.DesactivarTeclaInteractuar();
+        }
     }
 
     
@@ -162,11 +173,6 @@ public class ControladorJugador : MonoBehaviour
         if (other.gameObject.CompareTag("Trampa"))
         {
             modeloJugador.encimaDeTrampa = true;//Herencia de la clase ModeloJugador
-        }
-        if(other.gameObject.CompareTag("Aldeano"))
-        {
-            Debug.Log("ALDEANO");
-            other.GetComponent<AldeanoScript>().PatoRng(powerDucks);
         }
         /*if (other.gameObject.CompareTag("TrampaFoso"))
         {

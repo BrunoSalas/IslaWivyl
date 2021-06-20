@@ -20,6 +20,10 @@ public class ModeloJugador : MonoBehaviour
     public bool enElSuelo;
     public bool poderUsable;
     public bool encimaDeTrampa; // variable para detectar trampa
+    public UIManaguer UiManaguer;
+    public bool aldeanoEnRango;
+    public GameObject aldeanoInteractuable;
+
     public Vector3 spawnPoint;
     public GameObject objCheckpoint;
     public float aceleracion;
