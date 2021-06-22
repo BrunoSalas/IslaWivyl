@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.SceneManagement;
 
 
 public class ControladorJugador : MonoBehaviour
@@ -165,7 +166,12 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.maximaVida = modeloJugador.maximaVida - 100;
         }
-        
+
+        /*if (other.gameObject.CompareTag("MetaFinal"))
+        {
+            SceneManager.LoadScene("Ganar");
+        }
+        */
     }
 
     private void OnTriggerEnter(Collider other)
@@ -177,7 +183,7 @@ public class ControladorJugador : MonoBehaviour
         /*if (other.gameObject.CompareTag("TrampaFoso"))
         {
             modeloJugador.vida -= 100;
-            //trampaManager.numeroTrampa = 2; Falta probar por tema de unity crasheado
+            
         }
         */
         if (other.gameObject.CompareTag("Lanzallama"))
@@ -212,5 +218,12 @@ public class ControladorJugador : MonoBehaviour
         }
         
     }
+
+    /* private void Morir ()
+     {
+        if (modelojugador.vida = 0)
+        {
+            SceneManager.LoadScene("Perder");
+    */
 
 }
