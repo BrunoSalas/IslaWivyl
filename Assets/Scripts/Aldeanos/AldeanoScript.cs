@@ -29,6 +29,7 @@ public class AldeanoScript : MonoBehaviour
             case 1:
                 Debug.Log("1");
                 ducks.patos1++;
+
                 Destroy(gameObject);
                 break ;
             case 2:

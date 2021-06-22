@@ -8,11 +8,16 @@ public class UIManaguer : MonoBehaviour
     public Slider barraDeSalud;
     public ModeloJugador mJ;
     public GameObject teclaInteractuar;
+    public PowerDucks pD;
+    public Text pato1Text;
+    public Text pato2Text;
+    public Text pato3Text;
     // Start is called before the first frame update
     void Start()
     {
         PrepararBarraDeVida();
         DesactivarTeclaInteractuar();
+        ActualizarPatos();
     }
 
     // Update is called once per frame
@@ -28,6 +33,13 @@ public class UIManaguer : MonoBehaviour
     public void DesactivarTeclaInteractuar()
     {
         teclaInteractuar.SetActive(false);
+    }
+
+    public void ActualizarPatos()
+    {
+        pato1Text.text = ("x" + pD.patos1);
+        pato2Text.text = ("x" + pD.patos2);
+        pato3Text.text = ("x" + pD.patos3);
     }
     public void PrepararBarraDeVida()
     {

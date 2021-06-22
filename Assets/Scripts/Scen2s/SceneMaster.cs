@@ -63,7 +63,7 @@ public class SceneMaster : MonoBehaviour
 
     void Pausar()
     {
-
+        Cursor.lockState = CursorLockMode.None;
         menuDePausa.SetActive(true);
         Time.timeScale = 0f;
         pausado = true;
@@ -71,6 +71,7 @@ public class SceneMaster : MonoBehaviour
 
     public void Resumir()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         menuDePausa.SetActive(false);
         Time.timeScale = 1f;
         pausado = false;

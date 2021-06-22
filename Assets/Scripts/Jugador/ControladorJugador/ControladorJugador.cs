@@ -89,17 +89,30 @@ public class ControladorJugador : MonoBehaviour
     public void UsoDePower()
     {
 
-        if (Input.GetKeyDown(KeyCode.Q) && (powerDucks.patosListos)) // && modeloJugador.patos >= 1)//Herencia de la clase ModeloJugador
+        if (Input.GetKeyDown(KeyCode.Q) && (powerDucks.patosListos) && (powerDucks.patos1 > 0)) // && modeloJugador.patos >= 1)//Herencia de la clase ModeloJugador
         {
+            powerDucks.patos1--;
             StartCoroutine(powerDucks.patosCooldown());
             StartCoroutine(powerDucks.patoCura());
             Debug.Log("PatoCurar");
+            modeloJugador.UiManaguer.ActualizarPatos();
         }
-        if (Input.GetKeyDown(KeyCode.E) && (powerDucks.patosListos))
+        if (Input.GetKeyDown(KeyCode.E) && (powerDucks.patosListos) && (powerDucks.patos2 > 0))
         {
+            powerDucks.patos2--;
             StartCoroutine(powerDucks.patosCooldown());
             StartCoroutine(powerDucks.patoVeloz());
-            Debug.Log("PatoVElocidad");
+            modeloJugador.UiManaguer.ActualizarPatos();
+            Debug.Log("PatoVelocidad");
+        }
+        if (Input.GetKeyDown(KeyCode.R) && (powerDucks.patosListos) && (powerDucks.patos3>0))
+        {
+            powerDucks.patos3--;
+            StartCoroutine(powerDucks.patosCooldown());
+            powerDucks.patoMuro();
+            modeloJugador.UiManaguer.ActualizarPatos();
+            Debug.Log("PatoMuro");
+
         }
                    
     }
@@ -110,6 +123,7 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.aldeanoInteractuable.GetComponent<AldeanoScript>().PatoRng(powerDucks);
             Destroy(modeloJugador.aldeanoInteractuable);
+            modeloJugador.UiManaguer.ActualizarPatos();
             modeloJugador.UiManaguer.DesactivarTeclaInteractuar();
         }
     }
@@ -122,22 +136,6 @@ public class ControladorJugador : MonoBehaviour
             modeloJugador.encimaDeTrampa = false;//Herencia de la clase ModeloJugador
         }
     }
-    
-
-    void AldeanoPatoProbabilidad()
-    {
-        if (Random.Range(1f, 100f) < modeloJugador.AldeanoRNG)
-        {
-            Debug.Log("Aldeano me dio pato");
-        }
-        else
-        {
-            Debug.Log("Aldeano NO me dio pato");
-        }
-    }
-
-  
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Piso"))

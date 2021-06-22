@@ -16,9 +16,9 @@ public class PowerDucks : MonoBehaviour
     public float multiplicadorVelocidadPato1;
     public bool ListoPato1;
     public float velocidadPato1Mult = 1f;
-    public float patos1;
-    public float patos2;
-    public float patos3;
+    public int patos1;
+    public int patos2;
+    public int patos3;
     public float curacion;
     public float velocidadAumentada;
     public float velocidadGuardado;
@@ -72,6 +72,14 @@ public class PowerDucks : MonoBehaviour
         velocidadPato1Mult = 2;
         yield return new WaitForSeconds(5f);
         velocidadPato1Mult = 1;
+    }
+
+    public void patoMuro()
+    {
+        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y+2, transform.position.z);
+        GameObject muro = Instantiate(modeloJugador.muroPrefab);
+        muro.transform.position = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+
     }
 
 }

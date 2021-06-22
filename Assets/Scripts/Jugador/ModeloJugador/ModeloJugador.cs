@@ -7,9 +7,8 @@ public class ModeloJugador : MonoBehaviour
     public GameObject gameplayManaguer;
     public Rigidbody rb;
     public LayerMask groundMask;
-    public float AldeanoRNG;
-    public int habilidad;
-    public int patosCura;
+
+    public GameObject muroPrefab;
     
     public float vida;
     public float maximaVida;
