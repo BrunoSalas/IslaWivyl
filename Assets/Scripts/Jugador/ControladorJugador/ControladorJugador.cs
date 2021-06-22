@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 
 public class ControladorJugador : MonoBehaviour
 {
     public ModeloJugador modeloJugador;
     public TrampaManager trampaManager;
+    public SceneMaster sceneMaster;
     private PowerDucks powerDucks;
     private Transform groundCheck;
     private float groundRad = 0.4f;
@@ -165,13 +166,14 @@ public class ControladorJugador : MonoBehaviour
         if (other.gameObject.CompareTag("RocaVolcanica"))
         {
             modeloJugador.maximaVida = modeloJugador.maximaVida - 100;
+            Morir();
         }
 
-        /*if (other.gameObject.CompareTag("MetaFinal"))
+        if (other.gameObject.CompareTag("MetaFinal"))
         {
-            SceneManager.LoadScene("Ganar");
+            sceneMaster.ToGanasteScene();
         }
-        */
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -180,12 +182,12 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.encimaDeTrampa = true;//Herencia de la clase ModeloJugador
         }
-        /*if (other.gameObject.CompareTag("TrampaFoso"))
+        if (other.gameObject.CompareTag("TrampaFoso"))
         {
             modeloJugador.vida -= 100;
-            
+            Morir();
         }
-        */
+        
         if (other.gameObject.CompareTag("Lanzallama"))
         {
             modeloJugador.lanzallamas = true;
@@ -215,15 +217,17 @@ public class ControladorJugador : MonoBehaviour
         if (other.gameObject.CompareTag("Crater"))
         {
             modeloJugador.vida -= 10;
+            Morir();
         }
         
     }
 
-    /* private void Morir ()
-     {
-        if (modelojugador.vida = 0)
+    public void Morir()
+    {
+        if (modeloJugador.vida <= 0)
         {
-            SceneManager.LoadScene("Perder");
-    */
+            sceneMaster.ToPerdisteScene();
+        }
 
+    }
 }

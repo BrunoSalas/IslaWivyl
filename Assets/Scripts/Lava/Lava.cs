@@ -10,6 +10,7 @@ public class Lava : MonoBehaviour
     public float tiempoDaño;
     public float cantidadDaño = 20;
     public ModeloJugador modeloJugador;
+    public ControladorJugador controladorJugador;
     void Start()
     {
         
@@ -32,6 +33,8 @@ public class Lava : MonoBehaviour
             {
                 tiempo -= tiempoDaño;
                 modeloJugador.vida -= cantidadDaño;
+                controladorJugador.Morir();
+
             }
             tiempo += Time.deltaTime;
         }

@@ -10,19 +10,19 @@ public class SceneMaster : MonoBehaviour
     public string perdisteScene;
     public string ganasteScene;
     public string creditosScene;
-    /*public bool pausado = false;
-    public GameObject menuDePausa;*/
+    public bool pausado = false;
+    public GameObject menuDePausa;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pausado)
             {
@@ -32,7 +32,8 @@ public class SceneMaster : MonoBehaviour
             {
                 Pausar();
             }
-        */
+        }
+
     }
 
     public void ToGameplay()
@@ -60,19 +61,21 @@ public class SceneMaster : MonoBehaviour
         Application.Quit();
     }
 
-    /*  void Pausar()
+    void Pausar()
     {
 
         menuDePausa.SetActive(true);
         Time.timeScale = 0f;
-        Pausado = true;
+        pausado = true;
     }
-    
+
     public void Resumir()
     {
         menuDePausa.SetActive(false);
         Time.timeScale = 1f;
-        Pausado = false;
-    */
+        pausado = false;
+
 
     }
+}
+       
