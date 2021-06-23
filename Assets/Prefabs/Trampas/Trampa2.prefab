@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348075278333496060}
   - component: {fileID: 3012290680158273253}
-  - component: {fileID: 5737014175359937242}
+  - component: {fileID: 1619340844172622379}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -40,8 +40,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137091019726668742}
   m_Mesh: {fileID: 5358991509302202112, guid: 43db8c8b2700dd342974bcbc3ff0817c, type: 3}
---- !u!64 &5737014175359937242
-MeshCollider:
+--- !u!65 &1619340844172622379
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -50,10 +50,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5358991509302202112, guid: 43db8c8b2700dd342974bcbc3ff0817c, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 300, y: 180.32, z: 300}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1306439195731691991
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +238,7 @@ GameObject:
   - component: {fileID: 7813399878246912871}
   m_Layer: 0
   m_Name: Trampa2
-  m_TagString: Untagged
+  m_TagString: Trampa2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
