@@ -16,7 +16,7 @@ public class TestScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.H))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Nivel0");
         }
     }
 }
