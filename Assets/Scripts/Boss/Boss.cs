@@ -23,6 +23,7 @@ public class Boss : MonoBehaviour
     public float tiempoAtaqueCuerpoaCuerpo;
     private float tiempoAtaqueLanzallamas;
     public float couldwCuerpoaCuerpo;
+    public float tiempoDeAtaques;
     public Transform jugador;
     UnityEngine.AI.NavMeshAgent enemigo;
     public bool colliderCuerpoCuerpo;
@@ -43,9 +44,9 @@ public class Boss : MonoBehaviour
 
     private void Update()
     {
-        AtaqueLejano();
-        AtaqueLanzallamas();
-        AtaqueCuerpoCuerpo();
+       //AtaqueLejano();
+       //AtaqueLanzallamas();
+      //AtaqueCuerpoCuerpo();
         Seguimiento();
         SistemaDeAtaques();
 
@@ -53,9 +54,9 @@ public class Boss : MonoBehaviour
 
     public void AtaqueLejano()
     {
-        if (lanzallamas == false && cuerpoCuerpo == false)
-        {
-
+        // if (lanzallamas == false && cuerpoCuerpo == false)
+        // {
+        mortero = true;
             targetAdelanteX = targerAdelante.transform.position.x;
             targetAdelanteY = targerAdelante.transform.position.y;
             targetAdelanteZ = targerAdelante.transform.position.z;
@@ -98,7 +99,7 @@ public class Boss : MonoBehaviour
                         {
                             Instantiate(rocaVolcanica, RocaVolcanica, transform.rotation);
 
-                            mortero = true;
+                            //mortero = true;
 
                             creado = 2;
                         }
@@ -121,7 +122,7 @@ public class Boss : MonoBehaviour
                         {
                             Instantiate(rocaVolcanica, RocaVolcanica, transform.rotation);
 
-                            mortero = true;
+                           // mortero = true;
 
                             creado = 2;
                         }
@@ -136,103 +137,146 @@ public class Boss : MonoBehaviour
 
                     break;
 
-            }
+           // }
         }
     }
 
     public void SistemaDeAtaques()
     {
-       //tiempoDeAtaques = tiempoDeAtaques + 1;
+       tiempoDeAtaques = tiempoDeAtaques + 1 * Time.deltaTime;
 
         colliderLanzaLlama = modeloJugador.lanzallamas;
         colliderCuerpoCuerpo = modeloJugador.cuerpoaCuerpo;
 
+        if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 4f && cuerpoCuerpo == false && mortero == false && colliderLanzaLlama == true)
+        {
+            AtaqueLanzallamas();
+        }
+
+        else
+        {
+            lanzallamas = false;
+        }
+
+        if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 2f && mortero == false && lanzallamas == false && colliderCuerpoCuerpo == true)
+        {
+            AtaqueCuerpoCuerpo();
+        }
+
+        else
+        {
+            cuerpoCuerpo = false;
+        }
+
+        if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 6f && lanzallamas == false && cuerpoCuerpo == false)
+        {
+            AtaqueLejano();
+        }
+
+        else
+        {
+            mortero = false;
+        }
+
+        if(tiempoDeAtaques > 6f)
+        {
+            tiempoDeAtaques = 0;
+        }
+        /*
         if (tiempoAtaqueLanzallamas < 9f && tiempoAtaqueLanzallamas > 4f)
         {
             lanzallamas = false;
             //colisionLanzallamas.SetActive(false);
         }
-       /* else
+        else
         {
             colisionLanzallamas.SetActive(true);
         }
-       */
+       
         if (tiempo >= 1f && tiempo <= 5f)
         {
             mortero = false;
         }
-
+        */
     }
 
     public void AtaqueLanzallamas()
     {
-        if (colliderLanzaLlama == true && cuerpoCuerpo == false && mortero == false)
+        lanzallamas = true;
+        modeloJugador.vida -= 10;
+
+        /*
+    if (colliderLanzaLlama == true && cuerpoCuerpo == false && mortero == false)
+    {
+        tiempoAtaqueLanzallamas = tiempoAtaqueLanzallamas + 1 * Time.deltaTime;
+        if (tiempoAtaqueLanzallamas >= 1f && tiempoAtaqueLanzallamas <= 4f)
         {
+            modeloJugador.vida -= 10;
+            lanzallamas = true;
 
-            tiempoAtaqueLanzallamas = tiempoAtaqueLanzallamas + 1 * Time.deltaTime;
-            if (tiempoAtaqueLanzallamas >= 1f && tiempoAtaqueLanzallamas <= 4f)
-            {
-                modeloJugador.vida -= 10;
-                lanzallamas = true;
-
-            }
-
-            else if (tiempoAtaqueLanzallamas >= 9f)
-            {
-                tiempoAtaqueLanzallamas = 0;
-
-            }
         }
 
+        else if (tiempoAtaqueLanzallamas >= 9f)
+        {
+            tiempoAtaqueLanzallamas = 0;
+
+        }
+    }
+        */
     }
 
     public void AtaqueCuerpoCuerpo()
     {
-        if (colliderCuerpoCuerpo == true && lanzallamas == false && mortero == false)
-        {
+        cuerpoCuerpo = true;
 
-            tiempoAtaqueCuerpoaCuerpo = tiempoAtaqueCuerpoaCuerpo + 1;
+        modeloJugador.vida = modeloJugador.vida - 10;
 
-            if (tiempoAtaqueCuerpoaCuerpo <= 2f)
-            {
-                modeloJugador.vida = modeloJugador.vida - 10;
+        /* if (colliderCuerpoCuerpo == true && lanzallamas == false && mortero == false)
+         {
 
-                cuerpoCuerpo = true;
+             tiempoAtaqueCuerpoaCuerpo = tiempoAtaqueCuerpoaCuerpo + 1;
 
-                couldwCuerpoaCuerpo = 0;
+             if (tiempoAtaqueCuerpoaCuerpo <= 2f)
+             {
+                 modeloJugador.vida = modeloJugador.vida - 10;
 
-            }
-        }
-        else if (cuerpoCuerpo == true)
-        {
+                 cuerpoCuerpo = true;
 
-            couldwCuerpoaCuerpo = couldwCuerpoaCuerpo + 1 * Time.deltaTime;
+                 couldwCuerpoaCuerpo = 0;
 
-            if (couldwCuerpoaCuerpo >= 4f)
-            {
-                tiempoAtaqueCuerpoaCuerpo = 0;
+             }
+         }
+         else if (cuerpoCuerpo == true)
+         {
 
+             couldwCuerpoaCuerpo = couldwCuerpoaCuerpo + 1 * Time.deltaTime;
 
-                //colisionCuerpoaCuerpo.SetActive(true);
-
-                tiempoAtaqueCuerpoaCuerpo = 0;
-
-                cuerpoCuerpo = false;
-
-            }
+             if (couldwCuerpoaCuerpo >= 4f)
+             {
+                 tiempoAtaqueCuerpoaCuerpo = 0;
 
 
-        }
+                 //colisionCuerpoaCuerpo.SetActive(true);
+
+                 tiempoAtaqueCuerpoaCuerpo = 0;
+
+                 cuerpoCuerpo = false;
+
+             }
+
+
+         }
+        */
     }
 
     public void Seguimiento()
     {
-        if (colliderCuerpoCuerpo == false)
+        if (cuerpoCuerpo == false)
         {
             enemigo.destination = jugador.position;
         }
 
-        else if (colliderCuerpoCuerpo == true)
+        else if (cuerpoCuerpo == true)
         {
             enemigo.destination = this.transform.position;
         }
