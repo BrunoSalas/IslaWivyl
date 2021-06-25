@@ -9,9 +9,12 @@ public class TrampaManager : MonoBehaviour
     public int numeroTrampa = 0; //Modificar la variable desde el player por colision con cada trampa
     //public GameObject[] coco;
     //int i;
+    //public GameObject jugador;
+    //public Rigidbody rb;
     void Start()
     {
-        
+        //Jugador = GameObject.Find("Player");
+        //rb = jugador.GetComponent<Rigidbody>();
     }
 
     
@@ -37,7 +40,7 @@ public class TrampaManager : MonoBehaviour
 
             case 3:
                 Debug.Log("trampa 3 activada");
-                //TrampaTres();
+                //StartCoroutine(Congelar());
                 numeroTrampa = 0;
                 break;
 
@@ -56,15 +59,15 @@ public class TrampaManager : MonoBehaviour
     /*void TrampaTres()
     {
         IEnumerator Congelar() {
-        Vector3 velocidadLineal = rigidbody.velocity;
-        Vector3 velocidadAngular = rigidbody.angularVelocity;
-        rigidbody.velocity = Vector3.zero
-        rigidbody.angularVelocity = Vector3.zero;
-        rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        Vector3 velocidadLineal = rb.rigidbody.velocity;
+        Vector3 velocidadAngular = rb.rigidbody.angularVelocity;
+        rb.rigidbody.velocity = Vector3.zero
+        rb.rigidbody.angularVelocity = Vector3.zero;
+        rb.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         
-        yield return new WaitForSeconds (4);
-        rigidbody.constraints = RigidbodyConstraints.None;
-        rigidbody.velocity = velocidadLineal;
-        rigidbody.angularVelocity = velocidadAngular;
+        yield return new WaitForSeconds (3);
+        rb.rigidbody.constraints = RigidbodyConstraints.None;
+        rb.rigidbody.velocity = velocidadLineal;
+        rb.rigidbody.angularVelocity = velocidadAngular;
     */
 }
