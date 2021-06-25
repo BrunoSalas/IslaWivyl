@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/WhiteBlocking.unity
     guid: bdc4f7b2308b1a044b54e1f4b561c333
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 51aa299b66c09f443b7123caa7579af4
   - enabled: 1
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel1.unity
     guid: c35ef312900256c4da4b4ce0db655c0e
+  - enabled: 1
+    path: Assets/Scenes/CreditosScene.unity
+    guid: 79449893680992348a5c65cb617b9207
   m_configObjects: {}
