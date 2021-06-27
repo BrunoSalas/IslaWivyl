@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TrampaManager : MonoBehaviour
 {
-    
+    public SceneMaster scenemaster;
     public int numeroTrampa = 0; //Modificar la variable desde el player por colision con cada trampa
     //public GameObject[] coco;
     //int i;
@@ -35,6 +35,9 @@ public class TrampaManager : MonoBehaviour
 
             case 2:
                 Debug.Log("trampa 2 activada");
+                Cursor.lockState = CursorLockMode.None;
+                scenemaster.ToMainMenu();
+
                 numeroTrampa = 0;
                 break;
 
