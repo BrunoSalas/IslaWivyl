@@ -5,7 +5,7 @@ using UnityEngine;
 public class ModeloJugador : MonoBehaviour
 {
     public GameObject gameplayManaguer;
-    public Rigidbody rb;
+    //public Rigidbody rb;
     public LayerMask groundMask;
 
     public GameObject muroPrefab;
@@ -14,7 +14,8 @@ public class ModeloJugador : MonoBehaviour
     public float maximaVida;
     public float velocidadMov;
     public float velocidadMovCorrer; // se usa para multiplicar la velocidad mientras se presiona shift
-    public float salto = 0.4f;
+    public float maxVelocidad;
+    public float gravedad = 2f;
     public float empujeSalto = 10;
     public bool enElSuelo;
     public bool poderUsable;

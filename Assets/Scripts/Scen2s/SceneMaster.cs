@@ -65,7 +65,7 @@ public class SceneMaster : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         menuDePausa.SetActive(true);
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
         pausado = true;
     }
 
@@ -75,8 +75,6 @@ public class SceneMaster : MonoBehaviour
         menuDePausa.SetActive(false);
         Time.timeScale = 1f;
         pausado = false;
-
-
     }
     
     public void Escribir()

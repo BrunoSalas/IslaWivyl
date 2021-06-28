@@ -12,27 +12,23 @@ public class ControladorJugador : MonoBehaviour
     public SceneMaster sceneMaster;
     private PowerDucks powerDucks;
     private Transform groundCheck;
+    
+    Vector3 movedire;
     private float groundRad = 0.4f;
     private float velocidadCorreroriginal;
     private float velocidadCorrerMult=1f;
-    
-    
+    CharacterController controller;
     private RaycastHit aldeano;
-    private Rigidbody rb_mj;
-
     void Start()
     {
-        rb_mj = modeloJugador.rb;
+        controller = GetComponent<CharacterController>();
+        //rb_mj = modeloJugador.rb;
         velocidadCorreroriginal = modeloJugador.velocidadMovCorrer;
         groundCheck = GameObject.FindGameObjectWithTag("GroundCheck").transform;
         modeloJugador.vida = modeloJugador.maximaVida;
         modeloJugador = GetComponent<ModeloJugador>();
         powerDucks = GetComponent<PowerDucks>();
-        
-
     }
-
-
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -43,10 +39,6 @@ public class ControladorJugador : MonoBehaviour
         {
             velocidadCorrerMult = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && modeloJugador.enElSuelo)
-        {
-            rb_mj.AddForce(0, modeloJugador.empujeSalto, 0, ForceMode.Impulse);
-        }
         UsoDePower();
         Trampas();
         Interactuar();
@@ -55,15 +47,26 @@ public class ControladorJugador : MonoBehaviour
     private void FixedUpdate()
     {
         modeloJugador.enElSuelo = Physics.CheckSphere(groundCheck.position, groundRad, modeloJugador.groundMask);
-        //float velocidadMov_mj = modeloJugador.velocidadMov; //Herencia de la clase ModeloJugador
-        float movHorizontal = Input.GetAxisRaw("Horizontal") * modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult;
-        float movVertical = Input.GetAxisRaw("Vertical") * modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult;
-
-        rb_mj.velocity = (transform.forward * movVertical) + (transform.right * movHorizontal) + (transform.up * rb_mj.velocity.y);
-
-
+        float movHorizontal = Input.GetAxisRaw("Horizontal"); //* modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult;
+        float movVertical = Input.GetAxisRaw("Vertical"); //* modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult;
+        Vector3 direction = new Vector3(movHorizontal, 0, movVertical);
+        Vector3 movement = transform.TransformDirection(direction) ;
+        Vector3 movimientoplano = modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult * Time.deltaTime * movement;
+        movedire = new Vector3(movimientoplano.x, movedire.y, movimientoplano.z);
+        if(salto)
+        {
+            movedire.y = modeloJugador.empujeSalto;
+        }
+        else if(modeloJugador.enElSuelo)
+        {
+            movedire.y = 0f;
+        }
+        else
+        {
+            movedire.y -= modeloJugador.gravedad * Time.deltaTime;
+        }
+        controller.Move(movedire);
     }
-    //Función para modificar la vida
     void ModificadorVida(bool aumento,float valor)
     {
         if(aumento)
@@ -127,7 +130,7 @@ public class ControladorJugador : MonoBehaviour
             modeloJugador.UiManaguer.DesactivarTeclaInteractuar();
         }
     }
-
+    private bool salto => modeloJugador.enElSuelo && Input.GetKey(KeyCode.Space);
     
     public void Trampas()
     {
@@ -185,7 +188,6 @@ public class ControladorJugador : MonoBehaviour
             modeloJugador.vida -= 100;
             Morir();
         }
-        
         if (other.gameObject.CompareTag("Lanzallama"))
         {
             modeloJugador.lanzallamas = true;
@@ -203,13 +205,11 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.lanzallamas = false;
         }
-
         if (other.gameObject.CompareTag("CuerpoaCuerpo"))
         {
             modeloJugador.cuerpoaCuerpo = false;
         }
     }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Crater"))
@@ -217,9 +217,7 @@ public class ControladorJugador : MonoBehaviour
             modeloJugador.vida -= 10;
             Morir();
         }
-        
     }
-
     public void Morir()
     {
         if (modeloJugador.vida <= 0)
