@@ -186,7 +186,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8353145415124613220}
-  m_Mesh: {fileID: 2309039186301365694, guid: 4ccdcc8f28211314dadc016b7867a601, type: 3}
+  m_Mesh: {fileID: 2309039186301365694, guid: 3c1e8caea11c65a49aa3a1ea65063b78, type: 3}
 --- !u!23 &7560603759542327729
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1bd61172d11db44db91b83cf96f7a08, type: 2}
+  - {fileID: 5561349426305759274, guid: 3c1e8caea11c65a49aa3a1ea65063b78, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -237,7 +237,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8353145415124613220}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 154.55
+  m_Radius: 112.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -269,9 +269,15 @@ MonoBehaviour:
   targetJugadorX: 0
   targetJugadorY: 0
   targetJugadorZ: 0
+  tiempoAtaqueCuerpoaCuerpo: 0
+  couldwCuerpoaCuerpo: 0
+  tiempoDeAtaques: 0
   jugador: {fileID: 0}
   colliderCuerpoCuerpo: 0
   colliderLanzaLlama: 0
   GuardadoX: 0
   GuardadoY: 0
   GuardadoZ: 0
+  mortero: 0
+  lanzallamas: 0
+  cuerpoCuerpo: 0
