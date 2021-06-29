@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4482453, g: 0.49827206, b: 0.5755818, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482447, g: 0.4982717, b: 0.57558084, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18716,6 +18716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1972612750}
   - component: {fileID: 1972612749}
+  - component: {fileID: 1972612751}
   m_Layer: 0
   m_Name: Musica Ambiente
   m_TagString: Untagged
@@ -18736,14 +18737,14 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: dd5d29a10afe7d946a9bb194a2964253, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
+  m_Pitch: 0.32
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 3.76
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -18794,7 +18795,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -18826,13 +18827,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972612748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.9520761, z: -0, w: 0.30586144}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 2126533255}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972612751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972612748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e8519973a24f745b4ca97bf7fc59db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonk: {fileID: 0}
 --- !u!1 &1974919474
 GameObject:
   m_ObjectHideFlags: 0
@@ -20062,6 +20076,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3601507022212545995, guid: fb20150a6a9d789438d2c029a30486d3, type: 3}
   m_PrefabInstance: {fileID: 2109614653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2126533255 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1943416899580397989, guid: c9964ea33a63d5940907a56ba9da181c, type: 3}
+  m_PrefabInstance: {fileID: 973753119}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2127185250
 PrefabInstance:
