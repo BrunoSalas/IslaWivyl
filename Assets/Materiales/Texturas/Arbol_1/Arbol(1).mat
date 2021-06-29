@@ -10,7 +10,7 @@ Material:
   m_Name: Arbol(1)
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _DETAILSOURCE_SPECULARALPHA _ENABLETRIPLANARPROJECTION_ON _GLOSSYREFLECTIONS_OFF
-    _INVERTABASECOLOR_ON _NORMALMAP _SOURCE_SPECULARALPHA _TRIPLANARSPACEPROJECTION_OBJECTSPACE
+    _INVERTABASECOLOR_ON _SOURCE_SPECULARALPHA _TRIPLANARSPACEPROJECTION_OBJECTSPACE
     _USEAOFROMMAINPROPERTIES_ON _USEEMISSIONFROMMAINPROPERTIES_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 1238f4fcfd330b840a24eb6777cc6bb0, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CutoutMap:

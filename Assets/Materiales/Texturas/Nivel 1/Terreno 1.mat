@@ -9,9 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Terreno 1
   m_Shader: {fileID: 4800000, guid: 1f53b2e079258874d987bc2948630b78, type: 3}
-  m_ShaderKeywords: _DETAILSOURCE_SPECULARALPHA _ENABLETRIPLANARPROJECTION_ON _NORMALMAP
-    _SOURCE_SPECULARALPHA _TRIPLANARSPACEPROJECTION_OBJECTSPACE _USEAOFROMMAINPROPERTIES_ON
-    _USEEMISSIONFROMMAINPROPERTIES_ON
+  m_ShaderKeywords: _DETAILSOURCE_SPECULARALPHA _ENABLETRIPLANARPROJECTION_ON _SOURCE_SPECULARALPHA
+    _TRIPLANARSPACEPROJECTION_OBJECTSPACE _USEAOFROMMAINPROPERTIES_ON _USEEMISSIONFROMMAINPROPERTIES_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -22,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 785b65b5d5f2e174caee9f4f7d1f9738, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CutoutMap:
@@ -83,11 +82,11 @@ Material:
     - _Cull: 0
     - _Cutoff: 0.5
     - _DetailBrightness: 1
-    - _DetailGlossiness: 0.5
+    - _DetailGlossiness: 0
     - _DetailNormalMapScale: 1
     - _DetailSaturation: 0
     - _DetailSource: 0
-    - _DetailSpecularIntensity: 0.2
+    - _DetailSpecularIntensity: 0
     - _DstBlend: 0
     - _EmissionIntensity: 1
     - _EnableDetailMask: 0
