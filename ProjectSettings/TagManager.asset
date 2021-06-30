@@ -21,6 +21,7 @@ TagManager:
   - MetaFinal
   - Player Tag
   - PlayerHand
+  - ActivarBoss
   layers:
   - Default
   - TransparentFX
