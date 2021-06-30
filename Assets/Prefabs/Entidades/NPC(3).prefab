@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 7849587788262290255}
   - component: {fileID: 7849587788262290240}
   - component: {fileID: 4951091069083645570}
+  - component: {fileID: 1038689059928981902}
   m_Layer: 0
   m_Name: NPC(3)
   m_TagString: Aldeano
@@ -165,5 +166,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 206.55078, y: 217.66592, z: 43.567677}
-  m_Center: {x: 0, y: 110.25287, z: 0.819355}
+  m_Size: {x: 325, y: 215, z: 340}
+  m_Center: {x: 0, y: 110, z: 0}
+--- !u!114 &1038689059928981902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7849587788262290241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835faafa039fa3943bd59ca9ae9ee7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ml: {fileID: 0}
+  player: {fileID: 0}
+  Hand: {fileID: 0}

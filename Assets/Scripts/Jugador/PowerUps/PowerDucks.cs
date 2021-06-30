@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerDucks : MonoBehaviour
 {
     private ModeloJugador modeloJugador;
+    private CharacterController control;
 
     public bool patosListos;
 
@@ -30,6 +31,7 @@ public class PowerDucks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        control = GetComponent<CharacterController>();
         modeloJugador = GetComponent<ModeloJugador>();
         originalCooldownPato1Timer = cooldownPatosTimer;
         originalEffPato1Timer = effPato1Timer;
@@ -76,9 +78,11 @@ public class PowerDucks : MonoBehaviour
 
     public void patoMuro()
     {
+        control.enabled = false;
         gameObject.transform.position = new Vector3(transform.position.x, transform.position.y+2, transform.position.z);
         GameObject muro = Instantiate(modeloJugador.muroPrefab);
-        muro.transform.position = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+        muro.transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
+        control.enabled = true;
 
     }
 

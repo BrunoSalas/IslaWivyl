@@ -19,6 +19,8 @@ TagManager:
   - Trampa3
   - Crater
   - MetaFinal
+  - Player Tag
+  - PlayerHand
   layers:
   - Default
   - TransparentFX

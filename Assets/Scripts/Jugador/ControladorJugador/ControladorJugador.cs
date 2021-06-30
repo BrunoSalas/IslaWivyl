@@ -61,9 +61,12 @@ public class ControladorJugador : MonoBehaviour
         {
             movedire.y = 0f;
         }
-        else
+        else 
         {
-            movedire.y -= modeloJugador.gravedad * Time.deltaTime;
+           
+                movedire.y -= modeloJugador.gravedad * Time.deltaTime;
+            
+            
         }
         controller.Move(movedire);
     }
@@ -130,7 +133,7 @@ public class ControladorJugador : MonoBehaviour
             modeloJugador.UiManaguer.DesactivarTeclaInteractuar();
         }
     }
-    private bool salto => modeloJugador.enElSuelo && Input.GetKey(KeyCode.Space);
+    private bool salto => (modeloJugador.enElSuelo) && (Input.GetKey(KeyCode.Space));
     
     public void Trampas()
     {
