@@ -12,9 +12,14 @@ public class UIManaguer : MonoBehaviour
     public Text pato1Text;
     public Text pato2Text;
     public Text pato3Text;
+    public GameObject EFFCura;
+    public GameObject EFFVelocidad;
+    public GameObject EFFDaño;
     // Start is called before the first frame update
     void Start()
     {
+        //EFFCura = GameObject.Find("Cura EFF");
+        //EFFVelocidad = GameObject.Find("Velocidad EFF");
         PrepararBarraDeVida();
         DesactivarTeclaInteractuar();
         ActualizarPatos();

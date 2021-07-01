@@ -245,7 +245,9 @@ public class ControladorJugador : MonoBehaviour
         if (modeloJugador.vida <= 0)
         {
             Debug.Log("Ponchino");
+            Cursor.lockState = CursorLockMode.None;
             sceneMaster.ToPerdisteScene();
+
         }
 
     }

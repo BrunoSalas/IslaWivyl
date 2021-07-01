@@ -52,6 +52,7 @@ public class PowerDucks : MonoBehaviour
     public IEnumerator patoCura()
     {
         modeloJugador.vida += 5;
+        modeloJugador.UiManaguer.EFFCura.SetActive(true);
         if(modeloJugador.vida>modeloJugador.maximaVida)
         {
             modeloJugador.vida = modeloJugador.maximaVida;
@@ -64,6 +65,7 @@ public class PowerDucks : MonoBehaviour
         }
         yield return new WaitForSeconds(5f);
         modeloJugador.vida += 5;
+        modeloJugador.UiManaguer.EFFCura.SetActive(false);
         if (modeloJugador.vida > modeloJugador.maximaVida)
         {
             modeloJugador.vida = modeloJugador.maximaVida;
@@ -72,7 +74,9 @@ public class PowerDucks : MonoBehaviour
     public IEnumerator patoVeloz()
     {
         velocidadPato1Mult = 2;
+        modeloJugador.UiManaguer.EFFVelocidad.SetActive(true);
         yield return new WaitForSeconds(5f);
+        modeloJugador.UiManaguer.EFFVelocidad.SetActive(false);
         velocidadPato1Mult = 1;
     }
 
