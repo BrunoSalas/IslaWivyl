@@ -11,6 +11,7 @@ public class SceneMaster : MonoBehaviour
     public string ganasteScene;
     public string creditosScene;
     public bool pausado = false;
+    public lav fuerzaLava;
     public GameObject menuDePausa;
 
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class SceneMaster : MonoBehaviour
             if (pausado)
             {
                 Resumir();
+
             }
             else
             {
@@ -35,7 +37,8 @@ public class SceneMaster : MonoBehaviour
         }
 
     }
-
+   
+   
     public void ToGameplay()
     {
         SceneManager.LoadScene(gameplayScene);
@@ -60,7 +63,13 @@ public class SceneMaster : MonoBehaviour
     {
         Application.Quit();
     }
-
+    public void Resumir()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        menuDePausa.SetActive(false);
+        Time.timeScale = 1f;
+        pausado = false;
+    }
     void Pausar()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -69,13 +78,7 @@ public class SceneMaster : MonoBehaviour
         pausado = true;
     }
 
-    public void Resumir()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        menuDePausa.SetActive(false);
-        Time.timeScale = 1f;
-        pausado = false;
-    }
+
     
     public void Escribir()
     {

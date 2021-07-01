@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1619340844172622379}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Trampa2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137091019726668742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: 0, y: 2.469, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.00037378998, z: 0.01}
   m_Children: []
   m_Father: {fileID: 7813399878246912871}
   m_RootOrder: 3
@@ -48,7 +48,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137091019726668742}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 450, y: 190, z: 450}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 8723898743889165305}
   m_Layer: 0
   m_Name: group1
-  m_TagString: Untagged
+  m_TagString: Trampa2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 4623361043295288813}
   m_Layer: 0
   m_Name: pCube1
-  m_TagString: Untagged
+  m_TagString: Trampa2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 3186873722451618967}
   m_Layer: 0
   m_Name: pCylinder19
-  m_TagString: Untagged
+  m_TagString: Trampa2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

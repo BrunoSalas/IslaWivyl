@@ -12,6 +12,7 @@ public class ControladorJugador : MonoBehaviour
     public SceneMaster sceneMaster;
     private PowerDucks powerDucks;
     private Transform groundCheck;
+    public lav lavaTrigger;
     
     Vector3 movedire;
     private float groundRad = 0.4f;
@@ -148,20 +149,13 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.enElSuelo = true;//Herencia de la clase ModeloJugador
         }
-        if (other.gameObject.CompareTag("Trampa1"))
-        {
-            trampaManager.numeroTrampa = 1;
-        }
-        if (other.gameObject.CompareTag("Trampa2"))
-        {
-            trampaManager.numeroTrampa = 2;
-        }
-
+       
+/*
         if (other.gameObject.CompareTag("Trampa3"))
         {
             trampaManager.numeroTrampa = 3;
         }
-
+*/
         if (other.gameObject.CompareTag("CheckPoint"))
         {
             modeloJugador.spawnPoint = modeloJugador.objCheckpoint.transform.position;
@@ -173,11 +167,6 @@ public class ControladorJugador : MonoBehaviour
             Morir();
         }
 
-        if (other.gameObject.CompareTag("MetaFinal"))
-        {
-            sceneMaster.ToGanasteScene();
-        }
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -186,11 +175,7 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.encimaDeTrampa = true;//Herencia de la clase ModeloJugador
         }
-        if (other.gameObject.CompareTag("TrampaFoso"))
-        {
-            modeloJugador.vida -= 100;
-            Morir();
-        }
+
         if (other.gameObject.CompareTag("Lanzallama"))
         {
             modeloJugador.lanzallamas = true;
@@ -199,6 +184,23 @@ public class ControladorJugador : MonoBehaviour
         if (other.gameObject.CompareTag("CuerpoaCuerpo"))
         {
             modeloJugador.cuerpoaCuerpo = true;
+        }
+       /* if (other.gameObject.CompareTag("Trampa1"))
+        {
+            trampaManager.numeroTrampa = 1;
+            Debug.Log("Col Trampa 1");
+        }*/
+        if (other.gameObject.CompareTag("TroncoTrampa1"))
+        {
+            Debug.Log("Parfavar");
+            modeloJugador.vida -= 100;
+            Morir();
+        }
+        if (other.gameObject.CompareTag("Trampa3"))
+        {
+            trampaManager.numeroTrampa = 3;
+            Destroy(other);
+            Debug.Log("Chino");
         }
     }
 
@@ -212,6 +214,23 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.cuerpoaCuerpo = false;
         }
+        if (other.gameObject.CompareTag("LavaTrigger"))
+        {
+            lavaTrigger.fuerza = 0.047f ;
+        }
+        if (other.gameObject.CompareTag("MetaFinal"))
+        {
+            sceneMaster.ToGanasteScene();
+            Debug.Log("GAAA");
+        }
+        if (other.gameObject.CompareTag("Trampa2"))
+        {
+            //trampaManager.numeroTrampa = 2;
+            modeloJugador.vida -= 100;
+            Morir();
+            Debug.Log("GAaaaA");
+        }
+
     }
     private void OnTriggerStay(Collider other)
     {
@@ -225,6 +244,7 @@ public class ControladorJugador : MonoBehaviour
     {
         if (modeloJugador.vida <= 0)
         {
+            Debug.Log("Ponchino");
             sceneMaster.ToPerdisteScene();
         }
 
