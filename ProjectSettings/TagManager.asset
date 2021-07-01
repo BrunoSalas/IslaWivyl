@@ -21,8 +21,9 @@ TagManager:
   - MetaFinal
   - Player Tag
   - PlayerHand
-  - LavaTrigger
+  - ActivarBoss
   - TroncoTrampa1
+  - LavaTrigger
   layers:
   - Default
   - TransparentFX

@@ -5,18 +5,16 @@ using UnityEngine;
 public class lav : MonoBehaviour
 {
     public float fuerza = 10;
-    public Rigidbody rb;
+    private Rigidbody rb;
     public Transform objetivo;
     public float tiempo;
     public float tiempoDao;
     public ModeloJugador modeloJugador;
     public ControladorJugador controladorJugador;
     public float cantidadDao;
-    public SceneMaster sceneMaster;
 
     void Start()
     {
-
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * Time.deltaTime * fuerza;
 
@@ -25,18 +23,12 @@ public class lav : MonoBehaviour
 
     void Update()
     {
-      
-        Vector3 transformLava = transform.position;
-        Vector3 transformObjetivo = objetivo.position;
-        transform.position = Vector3.MoveTowards(transformLava, transformObjetivo, fuerza);
 
-    }
-    void MovimientoDeLava()
-    {
         Vector3 transformLava = transform.position;
         Vector3 transformObjetivo = objetivo.position;
         transform.position = Vector3.MoveTowards(transformLava, transformObjetivo, fuerza);
     }
+
 
     private void OnTriggerStay(Collider dano)
     {
@@ -59,16 +51,6 @@ public class lav : MonoBehaviour
             tiempo = 0;
         }
     }
-    public void PausarLava()
-    {
-        if (sceneMaster.pausado==true)
-        {
-         
-        }
-        else
-        {
 
-        }
-    }
 
 }
