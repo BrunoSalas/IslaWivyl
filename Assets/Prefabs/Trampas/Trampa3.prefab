@@ -217,10 +217,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1749958861001762447}
   - component: {fileID: 5970126630199631646}
-  - component: {fileID: 5903627676733376635}
+  - component: {fileID: 3739030615610190889}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Trampa3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,8 +233,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7023716375747695811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: -0.154, y: 0.021, z: 0.101}
+  m_LocalScale: {x: 0.01, y: 0.0044025, z: 0.013873}
   m_Children: []
   m_Father: {fileID: 3015855361581527492}
   m_RootOrder: 4
@@ -247,20 +247,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7023716375747695811}
   m_Mesh: {fileID: 8850116265518966187, guid: 2927ac0bae3a81c49bea18bc1882bfa9, type: 3}
---- !u!64 &5903627676733376635
-MeshCollider:
+--- !u!65 &3739030615610190889
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7023716375747695811}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8850116265518966187, guid: 2927ac0bae3a81c49bea18bc1882bfa9, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 75.99802, y: 187.4314, z: 143.8545}
+  m_Center: {x: 27.38147, y: 78.71574, z: -8.839795}
 --- !u!1 &9121286181540289515
 GameObject:
   m_ObjectHideFlags: 0

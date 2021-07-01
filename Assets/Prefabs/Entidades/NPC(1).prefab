@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 7200397906801384604}
   - component: {fileID: 7200397906801384603}
   - component: {fileID: 1899017339168187836}
+  - component: {fileID: 3651985445543161222}
   m_Layer: 0
   m_Name: NPC(1)
   m_TagString: Aldeano
@@ -183,3 +184,22 @@ MonoBehaviour:
   ml: {fileID: 0}
   player: {fileID: 0}
   Hand: {fileID: 0}
+--- !u!95 &3651985445543161222
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7479452317598866816}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 8242c41892abf7b4e9b8344ba4110235, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1a5d8968629776342955e4fcd155a676, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
