@@ -129,7 +129,8 @@ public class ControladorJugador : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && modeloJugador.aldeanoEnRango)
         {
             modeloJugador.aldeanoInteractuable.GetComponent<AldeanoScript>().PatoRng(powerDucks);
-            Destroy(modeloJugador.aldeanoInteractuable);
+           //Destroy(modeloJugador.aldeanoInteractuable,3f);
+            modeloJugador.aldeanoInteractuable.GetComponent<Animator>().SetTrigger("TY");
             modeloJugador.UiManaguer.ActualizarPatos();
             modeloJugador.UiManaguer.DesactivarTeclaInteractuar();
         }

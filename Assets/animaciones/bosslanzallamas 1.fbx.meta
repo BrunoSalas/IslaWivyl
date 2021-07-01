@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 41654006ff357264785c4adaafa44abf
+guid: a14bf0bb57833e746a34c7a8b0309e9a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: -7643998293036367664
+    second: lanzallamas
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -97,7 +97,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

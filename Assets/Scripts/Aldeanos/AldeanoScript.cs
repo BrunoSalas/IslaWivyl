@@ -19,6 +19,12 @@ public class AldeanoScript : MonoBehaviour
     {
 
     }
+	void Morir()
+    {
+        //Destroy(gameObject, 6f);
+        Debug.Log ("Gaa");
+    }
+
     public void PatoRng(PowerDucks ducks)
     {
         Debug.Log("RNG");
