@@ -3270,7 +3270,7 @@ GameObject:
   - component: {fileID: 1046655260}
   - component: {fileID: 1046655259}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PuertaCueva
   m_TagString: LavaTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4603,7 +4603,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c713ce6824e15ec48a5d67176a26f7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  player: {fileID: 0}
   scenemaster: {fileID: 0}
+  trampa: {fileID: 0}
+  tronco: {fileID: 0}
   numeroTrampa: 0
 --- !u!4 &1338598199
 Transform:
