@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 4791753482063220391}
   - component: {fileID: 8489392990468538626}
   - component: {fileID: 5923525143451235784}
+  - component: {fileID: 1329030313781261878}
   m_Layer: 0
   m_Name: Jugador(Mano)
   m_TagString: Untagged
@@ -94,7 +95,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5274958487681422365}
-  m_Mesh: {fileID: 2381890483179193753, guid: e4e02f105370d7e4088e966e6b36962a, type: 3}
+  m_Mesh: {fileID: 2381890483179193753, guid: 4e036ac8bf529f2438d454d3865e1595, type: 3}
 --- !u!23 &5923525143451235784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -136,3 +137,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &1329030313781261878
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5274958487681422365}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 4e036ac8bf529f2438d454d3865e1595, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
