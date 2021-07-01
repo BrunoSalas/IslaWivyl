@@ -13,7 +13,7 @@ public class ControladorJugador : MonoBehaviour
     private PowerDucks powerDucks;
     private Transform groundCheck;
     public lav lavaTrigger;
-
+    
     Vector3 movedire;
     private float groundRad = 0.4f;
     private float velocidadCorreroriginal;
@@ -143,6 +143,32 @@ public class ControladorJugador : MonoBehaviour
             modeloJugador.encimaDeTrampa = false;//Herencia de la clase ModeloJugador
         }
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Piso"))
+        {
+            modeloJugador.enElSuelo = true;//Herencia de la clase ModeloJugador
+        }
+       
+/*
+        if (other.gameObject.CompareTag("Trampa3"))
+        {
+            trampaManager.numeroTrampa = 3;
+        }
+*/
+        if (other.gameObject.CompareTag("CheckPoint"))
+        {
+            modeloJugador.spawnPoint = modeloJugador.objCheckpoint.transform.position;
+        }
+
+        if (other.gameObject.CompareTag("RocaVolcanica"))
+        {
+            modeloJugador.maximaVida = modeloJugador.maximaVida - 100;
+            Morir();
+        }
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Trampa"))
@@ -159,11 +185,11 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.cuerpoaCuerpo = true;
         }
-        /* if (other.gameObject.CompareTag("Trampa1"))
-         {
-             trampaManager.numeroTrampa = 1;
-             Debug.Log("Col Trampa 1");
-         }*/
+       /* if (other.gameObject.CompareTag("Trampa1"))
+        {
+            trampaManager.numeroTrampa = 1;
+            Debug.Log("Col Trampa 1");
+        }*/
         if (other.gameObject.CompareTag("TroncoTrampa1"))
         {
             Debug.Log("Parfavar");
@@ -190,8 +216,7 @@ public class ControladorJugador : MonoBehaviour
         }
         if (other.gameObject.CompareTag("LavaTrigger"))
         {
-            lavaTrigger.fuerza = 0.047f;
-            Debug.Log("ga");
+            lavaTrigger.fuerza = 0.047f ;
         }
         if (other.gameObject.CompareTag("MetaFinal"))
         {
