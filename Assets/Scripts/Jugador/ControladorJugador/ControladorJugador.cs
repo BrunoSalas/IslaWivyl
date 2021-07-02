@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Animations;
 
 
 public class ControladorJugador : MonoBehaviour
@@ -12,6 +13,7 @@ public class ControladorJugador : MonoBehaviour
     public SceneMaster sceneMaster;
     private PowerDucks powerDucks;
     private Transform groundCheck;
+
     public lav lavaTrigger;
     
     Vector3 movedire;
@@ -29,6 +31,7 @@ public class ControladorJugador : MonoBehaviour
         modeloJugador.vida = modeloJugador.maximaVida;
         modeloJugador = GetComponent<ModeloJugador>();
         powerDucks = GetComponent<PowerDucks>();
+        
     }
     void Update()
     {
@@ -39,6 +42,10 @@ public class ControladorJugador : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             velocidadCorrerMult = 1;
+        }
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            modeloJugador.anima.SetBool("Salto", true); 
         }
         UsoDePower();
         Trampas();
@@ -61,9 +68,13 @@ public class ControladorJugador : MonoBehaviour
         else if(modeloJugador.enElSuelo)
         {
             movedire.y = 0f;
+            modeloJugador.anima.SetBool("Salto", false);
+            Debug.Log("En el piso ");
         }
         else 
         {
+            modeloJugador.anima.SetBool("Salto", true);
+            Debug.Log("En el aire");
            
                 movedire.y -= modeloJugador.gravedad * Time.deltaTime;
             

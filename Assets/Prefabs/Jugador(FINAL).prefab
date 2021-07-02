@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 8772050797028251421}
   - component: {fileID: 8772050797028251395}
   - component: {fileID: 8772050797028251394}
+  - component: {fileID: 7208224096123753522}
   m_Layer: 0
   m_Name: Jugador(Mano)
   m_TagString: PlayerHand
@@ -211,6 +212,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &7208224096123753522
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772050797028251420}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef68075cd5d5d4f4a90891b90934a660, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8772050797158046980
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,8 +403,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   muroPrefab: {fileID: 8983138581204099443, guid: a11ccf526ffb9f0499f21a0a9da4ff7d, type: 3}
+  anima: {fileID: 7208224096123753522}
   vida: 0
-  maximaVida: 2000
+  maximaVida: 100
   velocidadMov: 8
   velocidadMovCorrer: 2
   maxVelocidad: 0
@@ -507,6 +528,7 @@ MonoBehaviour:
   modeloJugador: {fileID: 8772050797328942867}
   trampaManager: {fileID: 0}
   sceneMaster: {fileID: 0}
+  lavaTrigger: {fileID: 0}
 --- !u!143 &8772050798047719892
 CharacterController:
   m_ObjectHideFlags: 0

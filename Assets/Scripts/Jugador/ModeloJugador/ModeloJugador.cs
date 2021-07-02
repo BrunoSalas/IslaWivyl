@@ -9,7 +9,7 @@ public class ModeloJugador : MonoBehaviour
     public LayerMask groundMask;
 
     public GameObject muroPrefab;
-    
+    public Animator anima;
     public float vida;
     public float maximaVida;
     public float velocidadMov;
