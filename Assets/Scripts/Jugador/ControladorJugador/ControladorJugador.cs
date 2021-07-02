@@ -130,7 +130,7 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.aldeanoInteractuable.GetComponent<AldeanoScript>().PatoRng(powerDucks);
            //Destroy(modeloJugador.aldeanoInteractuable,3f);
-            modeloJugador.aldeanoInteractuable.GetComponent<Animator>().SetTrigger("TY");
+           // modeloJugador.aldeanoInteractuable.GetComponent<Animator>().SetTrigger("TY");
             modeloJugador.UiManaguer.ActualizarPatos();
             modeloJugador.UiManaguer.DesactivarTeclaInteractuar();
         }

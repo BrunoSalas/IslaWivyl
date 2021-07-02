@@ -24,6 +24,8 @@ TagManager:
   - ActivarBoss
   - TroncoTrampa1
   - LavaTrigger
+  - Boss
+  - Limites
   layers:
   - Default
   - TransparentFX

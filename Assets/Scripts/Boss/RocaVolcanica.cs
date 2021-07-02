@@ -42,5 +42,9 @@ public class RocaVolcanica : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Limites"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

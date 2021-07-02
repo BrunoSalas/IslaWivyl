@@ -10,6 +10,7 @@ public class Boss : MonoBehaviour
     //public GameObject colisionLanzallamas;
    // public GameObject colisionCuerpoaCuerpo;
     public ModeloJugador modeloJugador;
+    public ControladorJugador controladorJugador;
     private int creado;
     private int parado;
     private float targetAdelanteX;
@@ -204,6 +205,8 @@ public class Boss : MonoBehaviour
     {
         lanzallamas = true;
         modeloJugador.vida -= 10;
+        controladorJugador.Morir();
+        
 
         /*
     if (colliderLanzaLlama == true && cuerpoCuerpo == false && mortero == false)
@@ -230,6 +233,8 @@ public class Boss : MonoBehaviour
         cuerpoCuerpo = true;
 
         modeloJugador.vida = modeloJugador.vida - 10;
+
+        controladorJugador.Morir();
 
         /* if (colliderCuerpoCuerpo == true && lanzallamas == false && mortero == false)
          {
