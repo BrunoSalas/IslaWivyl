@@ -301,6 +301,7 @@ MonoBehaviour:
   rocaVolcanica: {fileID: 4125062332199620289, guid: f989678328824fa4b915ae2bbaad5aec, type: 3}
   targerAdelante: {fileID: 0}
   modeloJugador: {fileID: 0}
+  controladorJugador: {fileID: 0}
   targetJugadorX: 0
   targetJugadorY: 0
   targetJugadorZ: 0
@@ -617,7 +618,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 761612992bccd6149868192aa645f902, type: 3}
+  - {fileID: 2100000, guid: f1bd61172d11db44db91b83cf96f7a08, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
