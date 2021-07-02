@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 41654006ff357264785c4adaafa44abf
+guid: 3ec3f9a7417eb3a4a9c05cebbf875c95
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: 4895233969425928957
+    second: Agra
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -97,7 +97,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

@@ -35,26 +35,40 @@ public class AldeanoScript : MonoBehaviour
             case 1:
                 Debug.Log("1");
                 ducks.patos1++;
-
+                //codigo de animacion
+                //Play.Animation("Agradecimiento");
+                //Destroy(gameObject,4.5f);
                 Destroy(gameObject);
                 break ;
             case 2:
                 Debug.Log("2");
                 ducks.patos2++;
+                //codigo de animacion
+                //Play.Animation("Agradecimiento");
+                //Destroy(gameObject,4.5f);
                 Destroy(gameObject);
                 break;
             case 3:
                 Debug.Log("3");
                 ducks.patos3++;
+                //codigo de animacion
+                //Play.Animation("Agradecimiento");
+                //Destroy(gameObject,4.5f);
                 Destroy(gameObject);
                 break;
             case 4:
                 Debug.Log("4");
                 Debug.Log("Unlucky");
+                //codigo de animacion
+                //Play.Animation("Agradecimiento");
+                //Destroy(gameObject,4.5f);
                 Destroy(gameObject);
                 break;
             case 0:
                 Debug.Log("NANI");
+                //codigo de animacion
+                //Play.Animation("Agradecimiento");
+                //Destroy(gameObject,4.5f);
                 Destroy(gameObject);
                 break;
 
