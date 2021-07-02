@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4482447, g: 0.49827182, b: 0.5755813, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482453, g: 0.49827206, b: 0.5755818, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14951,7 +14951,7 @@ MonoBehaviour:
   pato3Text: {fileID: 399943339}
   EFFCura: {fileID: 835736827398971617}
   EFFVelocidad: {fileID: 835736827398971616}
-  "EFFDa\xF1o": {fileID: 0}
+  "EFFDa\xF1o": {fileID: 2040796256}
 --- !u!4 &611510270
 Transform:
   m_ObjectHideFlags: 0
@@ -39918,7 +39918,7 @@ PrefabInstance:
     - target: {fileID: 8971514239422578395, guid: 3f2d2f63338482b40b7865a2f16fa36e, type: 3}
       propertyPath: sceneMaster
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1011359868}
     - target: {fileID: 8971514239422578395, guid: 3f2d2f63338482b40b7865a2f16fa36e, type: 3}
       propertyPath: modeloJugador
       value: 
@@ -41539,6 +41539,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1844051612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8971514239422578395, guid: 3f2d2f63338482b40b7865a2f16fa36e, type: 3}
+  m_PrefabInstance: {fileID: 1759519476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844051610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53815c8d3a93e449bb80955db41e0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1844357807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45755,6 +45766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb20150a6a9d789438d2c029a30486d3, type: 3}
+--- !u!1 &2040796256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 896502431976419152, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+  m_PrefabInstance: {fileID: 835736827398971615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2041363505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7785089495052075332, guid: 1ed1cbc78bf8cd44b81fa5eb26b93f08, type: 3}
@@ -46058,17 +46074,17 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 124840174}
+  - {fileID: 310255332}
   - {fileID: 412815215}
   - {fileID: 443114025}
+  - {fileID: 519959866}
+  - {fileID: 762712379}
   - {fileID: 982130559}
-  - {fileID: 77386406}
+  - {fileID: 1237494129}
   - {fileID: 1589199848}
   - {fileID: 1671054144}
-  - {fileID: 310255332}
-  - {fileID: 519959866}
-  - {fileID: 124840174}
-  - {fileID: 1237494129}
-  - {fileID: 762712379}
+  - {fileID: 77386406}
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48047,6 +48063,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8772050797114943807, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
+      propertyPath: lavaTrigger
+      value: 
+      objectReference: {fileID: 1844051612}
     - target: {fileID: 8772050797114943807, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
       propertyPath: sceneMaster
       value: 
