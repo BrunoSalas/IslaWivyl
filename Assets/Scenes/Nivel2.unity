@@ -4152,7 +4152,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -17379,11 +17379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d30657901a63c438e029d7707b00e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplayScene: 
-  mainMenuScene: Main Menu
-  perdisteScene: Main Menu
-  ganasteScene: Main Menu
-  creditosScene: 
   pausado: 0
   menuDePausa: {fileID: 928986701}
 --- !u!4 &1577138437
@@ -20477,11 +20472,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d30657901a63c438e029d7707b00e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplayScene: 
-  mainMenuScene: Main Menu
-  perdisteScene: Main Menu
-  ganasteScene: Main Menu
-  creditosScene: 
   pausado: 0
   menuDePausa: {fileID: 928986701}
 --- !u!4 &1942329690

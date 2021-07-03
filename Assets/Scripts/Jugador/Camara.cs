@@ -11,6 +11,7 @@ public class Camara : MonoBehaviour
     void Start()
     {
         //Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
         transform.rotation = Quaternion.identity;
         Cursor.lockState = CursorLockMode.Locked;
         transform.rotation = Quaternion.identity;

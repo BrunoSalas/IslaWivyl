@@ -5,11 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneMaster : MonoBehaviour
 {
-    public string gameplayScene;
-    public string mainMenuScene;
-    public string perdisteScene;
-    public string ganasteScene;
-    public string creditosScene;
+    
+ 
     public bool pausado = false;
     public GameObject menuDePausa;
     public static int continueValue = 1;
@@ -39,37 +36,49 @@ public class SceneMaster : MonoBehaviour
 
     public void ToGameplay()
     {
-        SceneManager.LoadScene(gameplayScene);
+        
+        continueValue = 1;
+        SceneManager.LoadScene(continueValue);
     }
     public void ToMainMenu()
     {
-        SceneManager.LoadScene(mainMenuScene);
+        SceneManager.LoadScene("Main Menu");
         continueValue = 1;
+        Cursor.lockState = CursorLockMode.None;
     }
     public void ToPerdisteScene()
     {
-        if (continueValue != 0)
-        {
-            SceneManager.LoadScene(continueValue);
-            Debug.Log("Perdiste en otro nivel");
-        }
-        else
-        {
-            SceneManager.LoadScene(mainMenuScene);
-            Debug.Log("Perdiste en el tutorial");
-            continueValue = 1;
-        }
+        
+        SceneManager.LoadScene("Perdiste Scene");
+        Debug.Log("Perdiste Papuh");
+        Cursor.lockState = CursorLockMode.None;
 
+
+    }
+    public void ToContinueScene()
+    {
+        SceneManager.LoadScene(continueValue);
+        Debug.Log("Continue");
     }
     public void ToGanasteScene()
     {
-        SceneManager.LoadScene(ganasteScene);
+        
         continueValue++;
+        if(continueValue==4)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        SceneManager.LoadScene(continueValue);
+        //Para que funcione, en el index de build debe ir así
+        // nivel 0 = 1;
+        // Nivel 1 = 2;
+        // Nivel 2 = 3;
+        //Ganaste = 4;
 
     }
     public void ToCreditosScene()
     {
-        SceneManager.LoadScene(creditosScene);
+        SceneManager.LoadScene("Creditos Scene");
     }
     public void EndGame()
     {
