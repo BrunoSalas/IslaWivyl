@@ -12,11 +12,12 @@ public class SceneMaster : MonoBehaviour
     public string creditosScene;
     public bool pausado = false;
     public GameObject menuDePausa;
+    public static int continueValue = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -43,14 +44,28 @@ public class SceneMaster : MonoBehaviour
     public void ToMainMenu()
     {
         SceneManager.LoadScene(mainMenuScene);
+        continueValue = 1;
     }
     public void ToPerdisteScene()
     {
-        SceneManager.LoadScene(perdisteScene);
+        if (continueValue != 0)
+        {
+            SceneManager.LoadScene(continueValue);
+            Debug.Log("Perdiste en otro nivel");
+        }
+        else
+        {
+            SceneManager.LoadScene(mainMenuScene);
+            Debug.Log("Perdiste en el tutorial");
+            continueValue = 1;
+        }
+
     }
     public void ToGanasteScene()
     {
         SceneManager.LoadScene(ganasteScene);
+        continueValue++;
+
     }
     public void ToCreditosScene()
     {
