@@ -134,15 +134,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6536281585876492272}
-  m_LocalRotation: {x: 0.6079447, y: -0, z: -0, w: 0.7939794}
+  m_LocalRotation: {x: 0.6079442, y: 0, z: 0, w: 0.7939798}
   m_LocalPosition: {x: 15.537908, y: -3.2169003, z: -22.637632}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.01, y: 0.009999999, z: 0.009999999}
   m_Children:
   - {fileID: 957036564847964977}
   - {fileID: 8020330828989155532}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 74.882, y: 0, z: 0}
 --- !u!1001 &775369905224537306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -300,6 +300,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1e3c2854e2ce47a4d8d0b95e7151ef0d, type: 3}
       propertyPath: m_Name
       value: Trampa 1(arbol)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e3c2854e2ce47a4d8d0b95e7151ef0d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e3c2854e2ce47a4d8d0b95e7151ef0d, type: 3}
