@@ -14,6 +14,7 @@ public class lav : MonoBehaviour
     public float cantidadDao;
     public SceneMaster sceneMaster;
 
+
     void Start()
     {
 
@@ -26,9 +27,10 @@ public class lav : MonoBehaviour
     void Update()
     {
       
-        Vector3 transformLava = transform.position;
-        Vector3 transformObjetivo = objetivo.position;
-        transform.position = Vector3.MoveTowards(transformLava, transformObjetivo, fuerza);
+        if (sceneMaster.pausado == false)
+        {
+            MovimientoDeLava ();
+        }
 
     }
     void MovimientoDeLava()
@@ -57,17 +59,6 @@ public class lav : MonoBehaviour
         if (dano.gameObject.tag == "Player")
         {
             tiempo = 0;
-        }
-    }
-    public void PausarLava()
-    {
-        if (sceneMaster.pausado==true)
-        {
-         
-        }
-        else
-        {
-
         }
     }
 

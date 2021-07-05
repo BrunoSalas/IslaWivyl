@@ -36,10 +36,12 @@ public class Boss : MonoBehaviour
     public bool lanzallamas;
     public bool cuerpoCuerpo;
    // private float tiempoDeAtaques;
+    
 
     private void Start()
     {
         enemigo = GetComponent<UnityEngine.AI.NavMeshAgent>();
+      
    
     }
 
@@ -152,6 +154,8 @@ public class Boss : MonoBehaviour
         if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 4f && cuerpoCuerpo == false && mortero == false && colliderLanzaLlama == true)
         {
             AtaqueLanzallamas();
+            //GameObject.Find ("Antorcha").SetActive(true);
+
         }
 
         else

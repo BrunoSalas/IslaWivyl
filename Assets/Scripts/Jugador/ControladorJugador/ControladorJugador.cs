@@ -31,6 +31,7 @@ public class ControladorJugador : MonoBehaviour
         modeloJugador.vida = modeloJugador.maximaVida;
         modeloJugador = GetComponent<ModeloJugador>();
         powerDucks = GetComponent<PowerDucks>();
+        modeloJugador.anima = GetComponent <Animator>();
         
     }
     void Update()
@@ -38,15 +39,14 @@ public class ControladorJugador : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             velocidadCorrerMult = modeloJugador.velocidadMovCorrer;
+            modeloJugador.anima.SetBool ("Corriendo", true);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             velocidadCorrerMult = 1;
+            modeloJugador.anima.SetBool ("Corriendo", false);
         }
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            modeloJugador.anima.SetBool("Salto", true); 
-        }
+        
         UsoDePower();
         Trampas();
         Interactuar();
@@ -64,20 +64,18 @@ public class ControladorJugador : MonoBehaviour
         if(salto)
         {
             movedire.y = modeloJugador.empujeSalto;
+            modeloJugador.anima.SetTrigger("Saltar");
+        
         }
         else if(modeloJugador.enElSuelo)
         {
+            
             movedire.y = 0f;
-            modeloJugador.anima.SetBool("Salto", false);
-            Debug.Log("En el piso ");
         }
         else 
         {
-            modeloJugador.anima.SetBool("Salto", true);
-            Debug.Log("En el aire");
-           
                 movedire.y -= modeloJugador.gravedad * Time.deltaTime;
-            
+                
             
         }
         controller.Move(movedire);

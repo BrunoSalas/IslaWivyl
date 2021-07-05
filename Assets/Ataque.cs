@@ -10,10 +10,8 @@ public class Ataque : MonoBehaviour
     void Start()
     {
        anim=boss.GetComponent<Animator>();
-        if (anim == null)
-        {
-            Debug.Log("idiota");
-        }
+        
+        
     }
 
     // Update is called once per frame
@@ -30,6 +28,7 @@ public class Ataque : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             anim.SetTrigger("Ataque");
+            
         }
 
     }

@@ -69,7 +69,7 @@ public class SceneMaster : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
         SceneManager.LoadScene(continueValue);
-        //Para que funcione, en el index de build debe ir así
+        //Para que funcione, en el index de build debe ir asï¿½
         // nivel 0 = 1;
         // Nivel 1 = 2;
         // Nivel 2 = 3;
