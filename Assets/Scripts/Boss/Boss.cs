@@ -35,13 +35,13 @@ public class Boss : MonoBehaviour
     public bool mortero;
     public bool lanzallamas;
     public bool cuerpoCuerpo;
+    public GameObject antorcha;
    // private float tiempoDeAtaques;
     
 
     private void Start()
     {
         enemigo = GetComponent<UnityEngine.AI.NavMeshAgent>();
-      
    
     }
 
@@ -154,23 +154,26 @@ public class Boss : MonoBehaviour
         if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 4f && cuerpoCuerpo == false && mortero == false && colliderLanzaLlama == true)
         {
             AtaqueLanzallamas();
-            //GameObject.Find ("Antorcha").SetActive(true);
+            antorcha.SetActive(true);
 
         }
 
         else
         {
             lanzallamas = false;
+            antorcha.SetActive(false);
         }
 
         if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 2f && mortero == false && lanzallamas == false && colliderCuerpoCuerpo == true)
         {
             AtaqueCuerpoCuerpo();
+            enemigo.speed = 0;
         }
 
         else
         {
             cuerpoCuerpo = false;
+            enemigo.speed = 30;
         }
 
         if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 6f && lanzallamas == false && cuerpoCuerpo == false)
@@ -208,7 +211,7 @@ public class Boss : MonoBehaviour
     public void AtaqueLanzallamas()
     {
         lanzallamas = true;
-        modeloJugador.vida -= 10;
+        modeloJugador.vida -= 0.16f;
         controladorJugador.Morir();
         
 
@@ -236,7 +239,7 @@ public class Boss : MonoBehaviour
     {
         cuerpoCuerpo = true;
 
-        modeloJugador.vida = modeloJugador.vida - 10;
+        modeloJugador.vida = modeloJugador.vida - 0.32f;
 
         controladorJugador.Morir();
 
@@ -283,11 +286,6 @@ public class Boss : MonoBehaviour
         if (cuerpoCuerpo == false)
         {
             enemigo.destination = jugador.position;
-        }
-
-        else if (cuerpoCuerpo == true)
-        {
-            enemigo.destination = this.transform.position;
         }
 
     }

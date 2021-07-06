@@ -246,7 +246,7 @@ public class ControladorJugador : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Crater"))
         {
-            modeloJugador.vida -= 10;
+            modeloJugador.vida -= 0.16f;
             Morir();
         }
     }
@@ -257,8 +257,6 @@ public class ControladorJugador : MonoBehaviour
             Debug.Log("Ponchino");
             Cursor.lockState = CursorLockMode.None;
             sceneMaster.ToPerdisteScene();
-
         }
-
     }
 }
