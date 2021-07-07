@@ -6987,6 +6987,7 @@ MonoBehaviour:
   scenemaster: {fileID: 1577138436}
   trampa: {fileID: 0}
   tronco: {fileID: 0}
+  SonidoTrampa3: {fileID: 2645266897506928809, guid: 69f06db8ef1ea904591a90f7d3ec8740, type: 3}
   numeroTrampa: 0
 --- !u!4 &487352623
 Transform:
@@ -12036,6 +12037,7 @@ MonoBehaviour:
   scenemaster: {fileID: 1942329689}
   trampa: {fileID: 0}
   tronco: {fileID: 0}
+  SonidoTrampa3: {fileID: 2645266897506928809, guid: 69f06db8ef1ea904591a90f7d3ec8740, type: 3}
   numeroTrampa: 0
 --- !u!4 &1032207590
 Transform:

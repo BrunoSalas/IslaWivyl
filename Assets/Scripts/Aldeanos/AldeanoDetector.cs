@@ -7,13 +7,14 @@ public class AldeanoDetector : MonoBehaviour
     public ModeloJugador ml;
     public GameObject player;
     public GameObject Hand;
+    public AldeanoScript al;
     // Start is called before the first frame update
     void Start()
     {
         
         player = GameObject.FindGameObjectWithTag("Player");
         ml = player.GetComponent<ModeloJugador>();
-
+        al = GetComponent<AldeanoScript>();
     }
 
     // Update is called once per frame
@@ -28,10 +29,13 @@ public class AldeanoDetector : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            ml.UiManaguer.ActivarTeclaInteractuar();
-            Debug.Log("POGGG");
-            ml.aldeanoEnRango = true;
-            ml.aldeanoInteractuable = this.gameObject;
+            if (!al.recogido)
+            {
+                ml.UiManaguer.ActivarTeclaInteractuar();
+                Debug.Log("POGGG");
+                ml.aldeanoEnRango = true;
+                ml.aldeanoInteractuable = this.gameObject;
+            }
         }
     }
 

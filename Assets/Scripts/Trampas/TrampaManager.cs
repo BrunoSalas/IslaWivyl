@@ -11,6 +11,7 @@ public class TrampaManager : MonoBehaviour
     public SceneMaster scenemaster;
     public Trampa1 trampa;
     public GameObject tronco;
+    public GameObject SonidoTrampa3;
     public int numeroTrampa = 0; //Modificar la variable desde el player por colision con cada trampa
     //public GameObject[] coco;
     //int i;
@@ -53,6 +54,8 @@ public class TrampaManager : MonoBehaviour
 
             case 3:
                 Debug.Log("trampa 3 activada");
+                GameObject sonido = Instantiate(SonidoTrampa3);
+                sonido.transform.position = player.transform.position;
                 StartCoroutine(Congelar());
                 numeroTrampa = 0;
                 controller.enabled = false;

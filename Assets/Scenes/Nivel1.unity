@@ -3066,6 +3066,7 @@ MonoBehaviour:
   scenemaster: {fileID: 2090802415}
   trampa: {fileID: 0}
   tronco: {fileID: 0}
+  SonidoTrampa3: {fileID: 2645266897506928809, guid: 69f06db8ef1ea904591a90f7d3ec8740, type: 3}
   numeroTrampa: 0
 --- !u!4 &131579787
 Transform:
@@ -3133,6 +3134,7 @@ MonoBehaviour:
   ml: {fileID: 0}
   player: {fileID: 0}
   Hand: {fileID: 0}
+  al: {fileID: 0}
 --- !u!65 &132658574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13747,6 +13749,7 @@ MonoBehaviour:
   scenemaster: {fileID: 1011359868}
   trampa: {fileID: 0}
   tronco: {fileID: 0}
+  SonidoTrampa3: {fileID: 2645266897506928809, guid: 69f06db8ef1ea904591a90f7d3ec8740, type: 3}
   numeroTrampa: 0
 --- !u!4 &554866620
 Transform:
