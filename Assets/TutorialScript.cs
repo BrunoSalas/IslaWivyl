@@ -42,6 +42,9 @@ public class TutorialScript : MonoBehaviour
                 tutoTexto2.SetActive(false);
                 tutoTexto3.SetActive(false);
                 break;
+            case 2:
+
+                break;
         }
             
     }
