@@ -39,6 +39,8 @@ public class SceneMaster : MonoBehaviour
         
         continueValue = 1;
         SceneManager.LoadScene(continueValue);
+        
+        
     }
     public void ToMainMenu()
     {
