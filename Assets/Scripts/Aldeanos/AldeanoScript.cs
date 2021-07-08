@@ -10,9 +10,11 @@ public class AldeanoScript : MonoBehaviour
     public float probabilidadesNada;
     int rngCalculator;
     public bool recogido;
+    public Animator anim;
     void Start()
     {
         recogido = false;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,7 +24,7 @@ public class AldeanoScript : MonoBehaviour
     }
 	void Morir()
     {
-        //Destroy(gameObject, 6f);
+        
         Debug.Log ("Gaa");
     }
 
@@ -65,7 +67,9 @@ public class AldeanoScript : MonoBehaviour
     }
      IEnumerator RecogerAldeano()
     {
+        anim.SetBool ("Ga",true);
         yield return new WaitForSeconds (3f);
+
         Destroy(gameObject);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class lav : MonoBehaviour
 {
-    public float fuerza = 10;
+    public float fuerza;
     public Rigidbody rb;
     public Transform objetivo;
     public float tiempo;
@@ -18,8 +18,7 @@ public class lav : MonoBehaviour
     void Start()
     {
 
-        rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * Time.deltaTime * fuerza;
+        
 
     }
 
