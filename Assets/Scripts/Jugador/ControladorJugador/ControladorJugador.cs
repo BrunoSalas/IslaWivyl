@@ -15,11 +15,11 @@ public class ControladorJugador : MonoBehaviour
     private Transform groundCheck;
 
     public lav lavaTrigger;
-    
+
     Vector3 movedire;
     private float groundRad = 0.4f;
     private float velocidadCorreroriginal;
-    private float velocidadCorrerMult=1f;
+    private float velocidadCorrerMult = 1f;
     CharacterController controller;
     private RaycastHit aldeano;
     void Start()
@@ -31,22 +31,22 @@ public class ControladorJugador : MonoBehaviour
         modeloJugador.vida = modeloJugador.maximaVida;
         modeloJugador = GetComponent<ModeloJugador>();
         powerDucks = GetComponent<PowerDucks>();
-        modeloJugador.anima = GetComponent <Animator>();
-        
+        modeloJugador.anima = GetComponent<Animator>();
+
     }
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
             velocidadCorrerMult = modeloJugador.velocidadMovCorrer;
-            modeloJugador.anima.SetBool ("Corriendo", true);
+            modeloJugador.anima.SetBool("Corriendo", true);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             velocidadCorrerMult = 1;
-            modeloJugador.anima.SetBool ("Corriendo", false);
+            modeloJugador.anima.SetBool("Corriendo", false);
         }
-        
+
         UsoDePower();
         Trampas();
         Interactuar();
@@ -57,35 +57,43 @@ public class ControladorJugador : MonoBehaviour
         modeloJugador.enElSuelo = Physics.CheckSphere(groundCheck.position, groundRad, modeloJugador.groundMask);
         float movHorizontal = Input.GetAxisRaw("Horizontal"); //* modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult;
         float movVertical = Input.GetAxisRaw("Vertical"); //* modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult;
+        if (movHorizontal == 0 && movVertical == 0)
+        {
+            modeloJugador.pasos.SetActive(false);
+        }
+        else
+        {
+            modeloJugador.pasos.SetActive(true);
+        }
         Vector3 direction = new Vector3(movHorizontal, 0, movVertical);
-        Vector3 movement = transform.TransformDirection(direction) ;
+        Vector3 movement = transform.TransformDirection(direction);
         Vector3 movimientoplano = modeloJugador.velocidadMov * velocidadCorrerMult * powerDucks.velocidadPato1Mult * Time.deltaTime * movement;
         movedire = new Vector3(movimientoplano.x, movedire.y, movimientoplano.z);
-        if(salto)
+        if (salto)
         {
             movedire.y = modeloJugador.empujeSalto;
             modeloJugador.anima.SetTrigger("Saltar");
-        
+
         }
-        else if(modeloJugador.enElSuelo)
+        else if (modeloJugador.enElSuelo)
         {
-            
+
             movedire.y = 0f;
         }
-        else 
+        else
         {
-                movedire.y -= modeloJugador.gravedad * Time.deltaTime;
-                
-            
+            movedire.y -= modeloJugador.gravedad * Time.deltaTime;
+
+
         }
         controller.Move(movedire);
     }
-    void ModificadorVida(bool aumento,float valor)
+    void ModificadorVida(bool aumento, float valor)
     {
-        if(aumento)
+        if (aumento)
         {
             modeloJugador.vida += valor;
-            if(modeloJugador.vida>modeloJugador.maximaVida)
+            if (modeloJugador.vida > modeloJugador.maximaVida)
             {
                 modeloJugador.vida = modeloJugador.maximaVida;
             }
@@ -93,7 +101,7 @@ public class ControladorJugador : MonoBehaviour
         else
         {
             modeloJugador.vida -= valor;
-            if(modeloJugador.vida<0)
+            if (modeloJugador.vida < 0)
             {
                 modeloJugador.gameplayManaguer.GetComponent<GameplayControlador>().Perdiste();
             }
@@ -121,7 +129,7 @@ public class ControladorJugador : MonoBehaviour
             modeloJugador.UiManaguer.ActualizarPatos();
             Debug.Log("PatoVelocidad");
         }
-        if (Input.GetKeyDown(KeyCode.R) && (powerDucks.patosListos) && (powerDucks.patos3>0))
+        if (Input.GetKeyDown(KeyCode.R) && (powerDucks.patosListos) && (powerDucks.patos3 > 0))
         {
             powerDucks.patos3--;
             StartCoroutine(powerDucks.patosCooldown());
@@ -130,22 +138,22 @@ public class ControladorJugador : MonoBehaviour
             Debug.Log("PatoMuro");
 
         }
-                   
+
     }
 
     public void Interactuar()
     {
-        if(Input.GetKeyDown(KeyCode.F) && modeloJugador.aldeanoEnRango)
+        if (Input.GetKeyDown(KeyCode.F) && modeloJugador.aldeanoEnRango)
         {
             modeloJugador.aldeanoInteractuable.GetComponent<AldeanoScript>().PatoRng(powerDucks);
-           //Destroy(modeloJugador.aldeanoInteractuable,3f);
-           // modeloJugador.aldeanoInteractuable.GetComponent<Animator>().SetTrigger("TY");
+            //Destroy(modeloJugador.aldeanoInteractuable,3f);
+            // modeloJugador.aldeanoInteractuable.GetComponent<Animator>().SetTrigger("TY");
             modeloJugador.UiManaguer.ActualizarPatos();
             modeloJugador.UiManaguer.DesactivarTeclaInteractuar();
         }
     }
     private bool salto => (modeloJugador.enElSuelo) && (Input.GetKey(KeyCode.Space));
-    
+
     public void Trampas()
     {
         if (modeloJugador.encimaDeTrampa == true)
@@ -159,13 +167,13 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.enElSuelo = true;//Herencia de la clase ModeloJugador
         }
-       
-/*
-        if (other.gameObject.CompareTag("Trampa3"))
-        {
-            trampaManager.numeroTrampa = 3;
-        }
-*/
+
+        /*
+                if (other.gameObject.CompareTag("Trampa3"))
+                {
+                    trampaManager.numeroTrampa = 3;
+                }
+        */
         if (other.gameObject.CompareTag("CheckPoint"))
         {
             modeloJugador.spawnPoint = modeloJugador.objCheckpoint.transform.position;
@@ -195,11 +203,11 @@ public class ControladorJugador : MonoBehaviour
         {
             modeloJugador.cuerpoaCuerpo = true;
         }
-       /* if (other.gameObject.CompareTag("Trampa1"))
-        {
-            trampaManager.numeroTrampa = 1;
-            Debug.Log("Col Trampa 1");
-        }*/
+        /* if (other.gameObject.CompareTag("Trampa1"))
+         {
+             trampaManager.numeroTrampa = 1;
+             Debug.Log("Col Trampa 1");
+         }*/
         if (other.gameObject.CompareTag("TroncoTrampa1"))
         {
             Debug.Log("Parfavar");
@@ -226,7 +234,7 @@ public class ControladorJugador : MonoBehaviour
         }
         if (other.gameObject.CompareTag("LavaTrigger"))
         {
-            lavaTrigger.fuerza = 0.047f ;
+            lavaTrigger.fuerza = 0.047f;
         }
         if (other.gameObject.CompareTag("MetaFinal"))
         {
@@ -252,11 +260,18 @@ public class ControladorJugador : MonoBehaviour
     }
     public void Morir()
     {
+        StartCoroutine(EffDaño());
         if (modeloJugador.vida <= 0)
         {
             Debug.Log("Ponchino");
             Cursor.lockState = CursorLockMode.None;
             sceneMaster.ToPerdisteScene();
         }
+    }
+    public IEnumerator EffDaño()
+    {
+        modeloJugador.UiManaguer.EFFDaño.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        modeloJugador.UiManaguer.EFFDaño.SetActive(false);
     }
 }

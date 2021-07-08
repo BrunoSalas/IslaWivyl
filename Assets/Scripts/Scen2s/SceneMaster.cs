@@ -80,7 +80,7 @@ public class SceneMaster : MonoBehaviour
     }
     public void ToCreditosScene()
     {
-        SceneManager.LoadScene("Creditos Scene");
+        SceneManager.LoadScene("CreditosScene");
     }
     public void EndGame()
     {

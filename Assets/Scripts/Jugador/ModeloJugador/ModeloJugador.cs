@@ -23,6 +23,7 @@ public class ModeloJugador : MonoBehaviour
     public UIManaguer UiManaguer;
     public bool aldeanoEnRango;
     public GameObject aldeanoInteractuable;
+    public GameObject pasos;
 
     public Vector3 spawnPoint;
     public GameObject objCheckpoint;
