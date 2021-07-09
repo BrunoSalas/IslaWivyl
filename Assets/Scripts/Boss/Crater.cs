@@ -23,7 +23,7 @@ public class Crater : MonoBehaviour
         if (activarDestruccion == true)
         {
             tiempoDestruccion = tiempoDestruccion + 1 * Time.deltaTime;
-            if (tiempoDestruccion >= 4f)
+            if (tiempoDestruccion >= 2.5f)
             {
                 Destroy(gameObject);
             }

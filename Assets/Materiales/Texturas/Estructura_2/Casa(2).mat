@@ -108,7 +108,7 @@ Material:
     - _BlendMainNormal: 0
     - _BlendmodeOverlay: 0
     - _Brightness: 1
-    - _BumpScale: 1
+    - _BumpScale: 0.1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ContrastDetailMap: 0

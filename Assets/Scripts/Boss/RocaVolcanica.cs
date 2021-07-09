@@ -23,7 +23,7 @@ public class RocaVolcanica : MonoBehaviour
     {
         if (aparecerGrieta == true)
         {
-            Vector3 Grieta = new Vector3(transform.position.x, transform.position.y - 0.4f,transform.position.z);
+            Vector3 Grieta = new Vector3(transform.position.x, transform.position.y - 0.2f,transform.position.z);
             
             Instantiate(grieta, Grieta, transform.rotation);
 
@@ -53,6 +53,10 @@ public class RocaVolcanica : MonoBehaviour
         if (other.gameObject.CompareTag("Arbol"))
         {
             Destroy(gameObject);
+        }
+        if (other.gameObject.CompareTag("Marcador"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }

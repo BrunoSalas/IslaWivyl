@@ -255,6 +255,7 @@ public class ControladorJugador : MonoBehaviour
         if (other.gameObject.CompareTag("Crater"))
         {
             modeloJugador.vida -= 0.16f;
+            Debug.Log("aa");
             Morir();
         }
     }

@@ -36,6 +36,7 @@ public class Boss : MonoBehaviour
     public bool lanzallamas;
     public bool cuerpoCuerpo;
     public GameObject antorcha;
+    public GameObject marcador;
    // private float tiempoDeAtaques;
     
 
@@ -97,10 +98,13 @@ public class Boss : MonoBehaviour
                     if (tiempo <= 1)
                     {
                         Vector3 RocaVolcanica = new Vector3(targetJugadorX, targetJugadorY + 10, targetJugadorZ);
+                        Vector3 Marcador = new Vector3(targetJugadorX, targetJugadorY, targetJugadorZ);
 
-                        if (creado == 1)
+                    if (creado == 1)
                         {
                             Instantiate(rocaVolcanica, RocaVolcanica, transform.rotation);
+
+                            Instantiate(marcador, Marcador, transform.rotation);
 
                             //mortero = true;
 
@@ -120,10 +124,12 @@ public class Boss : MonoBehaviour
                     if (tiempo <= 1)
                     {
                         Vector3 RocaVolcanica = new Vector3(targetAdelanteX, targetAdelanteY + 10, targetAdelanteZ);
+                        Vector3 Marcador = new Vector3(targetAdelanteX, targetAdelanteY, targetAdelanteZ);
 
                         if (creado == 1)
                         {
                             Instantiate(rocaVolcanica, RocaVolcanica, transform.rotation);
+                            Instantiate(marcador, Marcador, transform.rotation);
 
                            // mortero = true;
 
