@@ -20,21 +20,10 @@ public class Crater : MonoBehaviour
 
     public void Destruir()
     {
-        if (activarDestruccion == true)
-        {
-            tiempoDestruccion = tiempoDestruccion + 1 * Time.deltaTime;
-            if (tiempoDestruccion >= 2.5f)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            activarDestruccion = true;
-        }
+      tiempoDestruccion = tiempoDestruccion + 1 * Time.deltaTime;
+       if (tiempoDestruccion >= 4f)
+       {
+        Destroy(gameObject);
+       }
     }
 }
