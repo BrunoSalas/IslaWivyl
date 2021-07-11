@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -520,11 +520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d30657901a63c438e029d7707b00e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplayScene: 
-  mainMenuScene: Main Menu
-  perdisteScene: 
-  ganasteScene: 
-  creditosScene: 
   pausado: 0
   menuDePausa: {fileID: 0}
 --- !u!114 &1053205845
@@ -673,7 +668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c437551cc82287647b653376719115c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7bd9ca64be853ad41b37a0f0c3078a8d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
