@@ -344,6 +344,9 @@ MonoBehaviour:
   probabilidadesPatoVeloz: 0
   probabilidadesPatoMuro: 0
   probabilidadesNada: 0
+  patoCuraUp: {fileID: 414101624968508991, guid: 91067f238d336c34a8ece4d556b0f31b, type: 3}
+  patoVelozUp: {fileID: 1232380596096396413, guid: 23d11e9c5fcbf2245b3e7e6d222e790c, type: 3}
+  patoMuroUp: {fileID: 968718778979536509, guid: 9a98e64a64f5c324f9a93a812a26e249, type: 3}
   recogido: 0
   anim: {fileID: 0}
 --- !u!114 &3479850542000541230
