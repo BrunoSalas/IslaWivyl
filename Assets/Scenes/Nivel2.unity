@@ -10411,6 +10411,18 @@ PrefabInstance:
       propertyPath: gameplayManaguer
       value: 
       objectReference: {fileID: 1942329687}
+    - target: {fileID: 8772050797328942894, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
+      propertyPath: patos1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772050797328942894, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
+      propertyPath: patos2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772050797328942894, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
+      propertyPath: patos3
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8772050797370825909, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8

@@ -89,5 +89,11 @@ public class PowerDucks : MonoBehaviour
         control.enabled = true;
 
     }
+    public void ResetPatos()
+    {
+        patos1 = 0;
+        patos2 = 0;
+        patos3 = 0;
+    }
 
 }

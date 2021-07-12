@@ -7394,6 +7394,18 @@ PrefabInstance:
       propertyPath: UiManaguer
       value: 
       objectReference: {fileID: 1859101863}
+    - target: {fileID: 8772050797328942894, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
+      propertyPath: patos1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772050797328942894, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
+      propertyPath: patos2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772050797328942894, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
+      propertyPath: patos3
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8772050798047719895, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
       propertyPath: m_Name
       value: Jugador(FINAL)
