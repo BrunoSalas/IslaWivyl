@@ -10128,9 +10128,21 @@ PrefabInstance:
       propertyPath: m_MinValue
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3547032405544203401, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433182865145084560, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6921368333383688569, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014732481999216370, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
