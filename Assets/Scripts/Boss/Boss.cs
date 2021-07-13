@@ -37,6 +37,7 @@ public class Boss : MonoBehaviour
     public bool cuerpoCuerpo;
     public GameObject antorcha;
     public GameObject marcador;
+    public Ataque animacionesAtaques;
    // private float tiempoDeAtaques;
     
 
@@ -157,8 +158,23 @@ public class Boss : MonoBehaviour
         colliderLanzaLlama = modeloJugador.lanzallamas;
         colliderCuerpoCuerpo = modeloJugador.cuerpoaCuerpo;
 
-        if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 4f && cuerpoCuerpo == false && mortero == false && colliderLanzaLlama == true)
+        if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 3f && mortero == false && lanzallamas == false && colliderCuerpoCuerpo == true)
         {
+            
+            AtaqueCuerpoCuerpo();
+            enemigo.speed = 0;
+            animacionesAtaques.AtaqueMeleeGolpe();
+        }
+
+        else
+        {
+            cuerpoCuerpo = false;
+            enemigo.speed = 30;
+        }
+
+        if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 3f && cuerpoCuerpo == false && mortero == false && colliderLanzaLlama == true)
+        {
+            animacionesAtaques.AtaqueLanzallamas();
             AtaqueLanzallamas();
             antorcha.SetActive(true);
 
@@ -170,17 +186,7 @@ public class Boss : MonoBehaviour
             antorcha.SetActive(false);
         }
 
-        if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 2f && mortero == false && lanzallamas == false && colliderCuerpoCuerpo == true)
-        {
-            AtaqueCuerpoCuerpo();
-            enemigo.speed = 0;
-        }
-
-        else
-        {
-            cuerpoCuerpo = false;
-            enemigo.speed = 30;
-        }
+        
 
         if (tiempoDeAtaques >= 1f && tiempoDeAtaques <= 6f && lanzallamas == false && cuerpoCuerpo == false)
         {
@@ -245,7 +251,7 @@ public class Boss : MonoBehaviour
     {
         cuerpoCuerpo = true;
 
-        modeloJugador.vida = modeloJugador.vida - 0.32f;
+        modeloJugador.vida = modeloJugador.vida -= 0.58f;
 
         controladorJugador.Morir();
 

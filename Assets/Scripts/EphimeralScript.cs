@@ -7,7 +7,7 @@ public class EphimeralScript : MonoBehaviour
     public float destruirEnSegundos;
     void Start()
     {
-        StartCoroutine(Autodestrucción());
+        StartCoroutine(Autodestruccion());
     }
 
     // Update is called once per frame
@@ -15,7 +15,7 @@ public class EphimeralScript : MonoBehaviour
     {
         
     }
-    public IEnumerator Autodestrucción()
+    public IEnumerator Autodestruccion()
     {
         yield return new WaitForSeconds(destruirEnSegundos);
         Destroy(gameObject);

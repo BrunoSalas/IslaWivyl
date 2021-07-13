@@ -7,8 +7,8 @@ public class Lava : MonoBehaviour
     public float fuerza;
     Vector3 posicionTemporal;
     public float tiempo;
-    public float tiempoDaño;
-    public float cantidadDaño = 20;
+    public float tiempoDano;
+    public float cantidadDano = 20;
     public ModeloJugador modeloJugador;
     public ControladorJugador controladorJugador;
     void Start()
@@ -29,10 +29,10 @@ public class Lava : MonoBehaviour
     {
         if(dano.gameObject.tag == "Player")
         {
-            if(tiempo >= tiempoDaño)
+            if(tiempo >= tiempoDano)
             {
-                tiempo -= tiempoDaño;
-                modeloJugador.vida -= cantidadDaño;
+                tiempo -= tiempoDano;
+                modeloJugador.vida -= cantidadDano;
                 controladorJugador.Morir();
 
             }

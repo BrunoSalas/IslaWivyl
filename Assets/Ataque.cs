@@ -23,7 +23,7 @@ public class Ataque : MonoBehaviour
     {
         anim.SetBool(attack, false);
     }
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -31,5 +31,14 @@ public class Ataque : MonoBehaviour
             
         }
 
+    }*/
+    public void AtaqueLanzallamas ()
+    {
+        anim.SetTrigger("Lanzallamas");
+    }
+
+    public void AtaqueMeleeGolpe (){
+        
+        anim.SetTrigger ("Ataque");
     }
 }

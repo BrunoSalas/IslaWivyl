@@ -14,7 +14,7 @@ public class UIManaguer : MonoBehaviour
     public Text pato3Text;
     public GameObject EFFCura;
     public GameObject EFFVelocidad;
-    public GameObject EFFDaño;
+    public GameObject EFFDano;
     // Start is called before the first frame update
     void Start()
     {

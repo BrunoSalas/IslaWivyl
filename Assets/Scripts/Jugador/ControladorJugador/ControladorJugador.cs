@@ -146,10 +146,12 @@ public class ControladorJugador : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && modeloJugador.aldeanoEnRango)
         {
             modeloJugador.aldeanoInteractuable.GetComponent<AldeanoScript>().PatoRng(powerDucks);
+            modeloJugador.aldeanosAgarrados += 1;
             //Destroy(modeloJugador.aldeanoInteractuable,3f);
             // modeloJugador.aldeanoInteractuable.GetComponent<Animator>().SetTrigger("TY");
             modeloJugador.UiManaguer.ActualizarPatos();
             modeloJugador.UiManaguer.DesactivarTeclaInteractuar();
+            
         }
     }
     private bool salto => (modeloJugador.enElSuelo) && (Input.GetKey(KeyCode.Space));
@@ -236,17 +238,47 @@ public class ControladorJugador : MonoBehaviour
         {
             lavaTrigger.fuerza = 0.047f;
         }
-        if (other.gameObject.CompareTag("MetaFinal"))
+        if (other.gameObject.CompareTag("MetaFinal1") && modeloJugador.aldeanosAgarrados >= modeloJugador.aldeanosRequeridos)
         {
             sceneMaster.ToGanasteScene();
-            Debug.Log("GAAA");
+            modeloJugador.aldeanosRequeridos = 5;
+
         }
+         if (other.gameObject.CompareTag("MetaFinal1") && modeloJugador.aldeanosAgarrados < modeloJugador.aldeanosRequeridos)
+        {
+           modeloJugador.requisitoBool = true;
+        }
+         if (other.gameObject.CompareTag("MetaFinal2") && modeloJugador.aldeanosAgarrados >= modeloJugador.aldeanosRequeridos)
+        {
+            sceneMaster.ToGanasteScene();
+            modeloJugador.aldeanosRequeridos = 4;
+            
+        }
+         if (other.gameObject.CompareTag("MetaFinal2") && modeloJugador.aldeanosAgarrados < modeloJugador.aldeanosRequeridos)
+        {
+           modeloJugador.requisitoBool = true;
+           Debug.Log("Ga");
+        }
+         if (other.gameObject.CompareTag("MetaFinal3") && modeloJugador.aldeanosAgarrados >= modeloJugador.aldeanosRequeridos)
+        {
+            sceneMaster.ToGanasteScene();
+        }
+        //Activar el teto sobre requisito para pasar nivel
+         if (other.gameObject.CompareTag("MetaFinal3") && modeloJugador.aldeanosAgarrados < modeloJugador.aldeanosRequeridos)
+        {
+           modeloJugador.requisitoBool = true;
+        }
+
         if (other.gameObject.CompareTag("Trampa2"))
         {
-            //trampaManager.numeroTrampa = 2;
+            
             modeloJugador.vida -= 100;
             Morir();
-            Debug.Log("GAaaaA");
+        }
+        if (other.gameObject.CompareTag("Requisito"))
+        {
+            
+            modeloJugador.requisitoBool = false;
         }
 
     }
@@ -254,25 +286,30 @@ public class ControladorJugador : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Crater"))
         {
-            modeloJugador.vida -= 0.16f;
+            modeloJugador.vida -= 0.30f;
             Debug.Log("aa");
+            Morir();
+        }
+        if (other.gameObject.CompareTag("DanoAura")){
+            modeloJugador.vida -= 0.9f;
             Morir();
         }
     }
     public void Morir()
     {
-        StartCoroutine(EffDaño());
+        StartCoroutine(EffDano());
         if (modeloJugador.vida <= 0)
         {
-            Debug.Log("Ponchino");
+            
             Cursor.lockState = CursorLockMode.None;
             sceneMaster.ToPerdisteScene();
         }
     }
-    public IEnumerator EffDaño()
+    public IEnumerator EffDano()
     {
-        modeloJugador.UiManaguer.EFFDaño.SetActive(true);
+        modeloJugador.UiManaguer.EFFDano.SetActive(true);
         yield return new WaitForSeconds(1f);
-        modeloJugador.UiManaguer.EFFDaño.SetActive(false);
+        modeloJugador.UiManaguer.EFFDano.SetActive(false);
     }
+
 }

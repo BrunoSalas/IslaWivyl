@@ -24,15 +24,20 @@ public class ModeloJugador : MonoBehaviour
     public bool aldeanoEnRango;
     public GameObject aldeanoInteractuable;
     public GameObject pasos;
+    public float aldeanosAgarrados = 0;
+    public float aldeanosRequeridos;
 
     public Vector3 spawnPoint;
     public GameObject objCheckpoint;
     public float aceleracion;
     public bool lanzallamas;
     public bool cuerpoaCuerpo;
+    public bool requisitoBool = false;
     void Start()
     {
         enElSuelo = true;
+        
+       
     }
 
     

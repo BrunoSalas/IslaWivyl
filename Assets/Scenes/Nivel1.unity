@@ -1821,6 +1821,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3601507022212545995, guid: fb20150a6a9d789438d2c029a30486d3, type: 3}
   m_PrefabInstance: {fileID: 1045118969}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &71162837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 71162838}
+  - component: {fileID: 71162839}
+  m_Layer: 0
+  m_Name: Requisito
+  m_TagString: Requisito
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &71162838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71162837}
+  m_LocalRotation: {x: -0, y: -0.0102134, z: -0, w: 0.99994785}
+  m_LocalPosition: {x: -0.5, y: -1.14, z: 3.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1884022279}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -1.17, z: 0}
+--- !u!65 &71162839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71162837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 17.304462, y: 11, z: 1}
+  m_Center: {x: 0.5802464, y: 0, z: 0.00000012278872}
 --- !u!4 &72160668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7785089495052075332, guid: 1ed1cbc78bf8cd44b81fa5eb26b93f08, type: 3}
@@ -17409,7 +17453,7 @@ MonoBehaviour:
   pato3Text: {fileID: 399943339}
   EFFCura: {fileID: 835736827398971617}
   EFFVelocidad: {fileID: 835736827398971616}
-  "EFFDa\xF1o": {fileID: 2040796256}
+  EFFDano: {fileID: 0}
 --- !u!4 &611510270
 Transform:
   m_ObjectHideFlags: 0
@@ -22319,6 +22363,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af71ee6c48549af48b1a9e3497eff088, type: 3}
+--- !u!1 &797311166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797311167}
+  - component: {fileID: 797311168}
+  m_Layer: 5
+  m_Name: Aldeanos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &797311167
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797311166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1071514208}
+  - {fileID: 1798632051}
+  m_Father: {fileID: 835736827398971618}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &797311168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797311166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc338bc867d1b464abe65b8a3dbe4473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeloJugador: {fileID: 2125559585}
+  texto: {fileID: 1071514210}
+  requisito: {fileID: 1798632050}
 --- !u!4 &798173398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2296514020356752428, guid: 5e012bdccfa943b4fa5739b722f2f30e, type: 3}
@@ -29417,6 +29514,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3601507022212545995, guid: fb20150a6a9d789438d2c029a30486d3, type: 3}
   m_PrefabInstance: {fileID: 2147241145}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1071514207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071514208}
+  - component: {fileID: 1071514211}
+  - component: {fileID: 1071514210}
+  m_Layer: 0
+  m_Name: AldeanosNecesitados
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1071514208
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071514207}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000111, y: 1.0000111, z: 1.0000111}
+  m_Children: []
+  m_Father: {fileID: 797311167}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -444.00006, y: 262}
+  m_SizeDelta: {x: 320, y: 146.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1071514210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071514207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 768dd3556e4a52448be9cb0b55f9ef69, type: 3}
+    m_FontSize: 36
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1071514211
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071514207}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1075608996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35178,6 +35354,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7785089495052075332, guid: 1ed1cbc78bf8cd44b81fa5eb26b93f08, type: 3}
   m_PrefabInstance: {fileID: 1329381323}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1320666493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320666494}
+  - component: {fileID: 1320666496}
+  - component: {fileID: 1320666495}
+  m_Layer: 0
+  m_Name: Requisito
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1320666494
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320666493}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000111, y: 1.0000111, z: 1.0000111}
+  m_Children: []
+  m_Father: {fileID: 1798632051}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -189, y: -80}
+  m_SizeDelta: {x: 320, y: 146.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1320666495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320666493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 768dd3556e4a52448be9cb0b55f9ef69, type: 3}
+    m_FontSize: 36
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Necesitas rescatar m\xE1s aldeanos para poder continuar"
+--- !u!222 &1320666496
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320666493}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1322765745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47539,6 +47794,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3601507022212545995, guid: fb20150a6a9d789438d2c029a30486d3, type: 3}
   m_PrefabInstance: {fileID: 1797201731}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1798632050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798632051}
+  m_Layer: 5
+  m_Name: RequisitoObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1798632051
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798632050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1320666494}
+  m_Father: {fileID: 797311167}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 262.37344, y: 141}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1800132446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2485949166118113174, guid: 359d99773ea355a44a21000eb054b251, type: 3}
@@ -49547,7 +49838,7 @@ GameObject:
   - component: {fileID: 1884022278}
   m_Layer: 0
   m_Name: Nivel2
-  m_TagString: MetaFinal
+  m_TagString: MetaFinal2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49575,7 +49866,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.050407875, z: -0, w: 0.99872875}
   m_LocalPosition: {x: -5.73, y: -1.14, z: -116.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 71162838}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: -5.779, z: 0}
@@ -53444,11 +53736,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb20150a6a9d789438d2c029a30486d3, type: 3}
---- !u!1 &2040796256 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 896502431976419152, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
-  m_PrefabInstance: {fileID: 835736827398971615}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2041363505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7785089495052075332, guid: 1ed1cbc78bf8cd44b81fa5eb26b93f08, type: 3}
@@ -56059,6 +56346,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7576421634313736915, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
   m_PrefabInstance: {fileID: 835736827398971615}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &835736827398971618 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 835736827488858322, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+  m_PrefabInstance: {fileID: 835736827398971615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7427264767830131345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56159,6 +56451,10 @@ PrefabInstance:
       propertyPath: gameplayManaguer
       value: 
       objectReference: {fileID: 1011359866}
+    - target: {fileID: 8772050797328942867, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
+      propertyPath: aldeanosRequeridos
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8772050797328942894, guid: 66805428a831da8449a54feb0f6f839b, type: 3}
       propertyPath: patos1
       value: 0

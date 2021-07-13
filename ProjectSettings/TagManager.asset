@@ -28,6 +28,12 @@ TagManager:
   - Limites
   - Marcador
   - Casas
+  - MetaFinal1
+  - MetaFinal2
+  - MetaFinal3
+  - Requisito
+  - "AuraDa\xF1o"
+  - DanoAura
   layers:
   - Default
   - TransparentFX
