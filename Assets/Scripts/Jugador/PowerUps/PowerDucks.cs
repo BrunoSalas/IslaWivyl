@@ -20,6 +20,9 @@ public class PowerDucks : MonoBehaviour
     public int patos1;
     public int patos2;
     public int patos3;
+    public static int patos1Acum;
+    public static int patos2Acum;
+    public static int patos3Acum;
     public float curacion;
     public float velocidadAumentada;
     public float velocidadGuardado;
@@ -35,11 +38,14 @@ public class PowerDucks : MonoBehaviour
         modeloJugador = GetComponent<ModeloJugador>();
         originalCooldownPato1Timer = cooldownPatosTimer;
         originalEffPato1Timer = effPato1Timer;
+        ResetPatos();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         
     }
 
@@ -91,9 +97,25 @@ public class PowerDucks : MonoBehaviour
     }
     public void ResetPatos()
     {
+        patos1 = patos1Acum;
+        patos2 = patos2Acum;
+        patos3 = patos3Acum;
+    }
+    public void ActualizarPatos()
+    {
+        patos1Acum = patos1;
+        patos2Acum = patos2;
+        patos3Acum = patos3;
+    }
+    public void PatosCero()
+    {
         patos1 = 0;
         patos2 = 0;
         patos3 = 0;
+        patos1Acum = patos1;
+        patos2Acum = patos2;
+        patos3Acum = patos3;
+
     }
 
 }

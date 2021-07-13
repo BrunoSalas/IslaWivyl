@@ -145,8 +145,8 @@ public class ControladorJugador : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && modeloJugador.aldeanoEnRango)
         {
-            modeloJugador.aldeanoInteractuable.GetComponent<AldeanoScript>().PatoRng(powerDucks);
-            modeloJugador.aldeanosAgarrados += 1;
+            modeloJugador.aldeanoInteractuable.GetComponent<AldeanoScript>().PatoRng(powerDucks,modeloJugador);
+            //modeloJugador.aldeanosAgarrados += 1;
             //Destroy(modeloJugador.aldeanoInteractuable,3f);
             // modeloJugador.aldeanoInteractuable.GetComponent<Animator>().SetTrigger("TY");
             modeloJugador.UiManaguer.ActualizarPatos();
@@ -302,6 +302,7 @@ public class ControladorJugador : MonoBehaviour
         {
             
             Cursor.lockState = CursorLockMode.None;
+            powerDucks.PatosCero();
             sceneMaster.ToPerdisteScene();
         }
     }

@@ -1429,7 +1429,7 @@ RectTransform:
   - {fileID: 30942155}
   - {fileID: 1971643606}
   m_Father: {fileID: 1395580386}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22617,7 +22617,7 @@ MonoBehaviour:
   pato3Text: {fileID: 1395580383}
   EFFCura: {fileID: 1395580382}
   EFFVelocidad: {fileID: 1395580381}
-  EFFDano: {fileID: 0}
+  EFFDano: {fileID: 2144227179}
 --- !u!4 &1349037197
 Transform:
   m_ObjectHideFlags: 0
@@ -33344,6 +33344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb20150a6a9d789438d2c029a30486d3, type: 3}
+--- !u!1 &2144227179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 896502431976419152, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+  m_PrefabInstance: {fileID: 1395580380}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2145484671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3015855361581527492, guid: f7db2dc1dab04f944b1234c3df747f47, type: 3}

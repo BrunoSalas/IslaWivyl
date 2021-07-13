@@ -22,13 +22,14 @@ public class UIManaguer : MonoBehaviour
         //EFFVelocidad = GameObject.Find("Velocidad EFF");
         PrepararBarraDeVida();
         DesactivarTeclaInteractuar();
-        ActualizarPatos();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         ActualizarBarraDeVida();
+        ActualizarPatos();
     }
 
     public void ActivarTeclaInteractuar()
