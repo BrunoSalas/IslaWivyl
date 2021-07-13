@@ -9984,6 +9984,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 179319983000565360, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 835736825717910175, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -10115,6 +10119,18 @@ PrefabInstance:
     - target: {fileID: 835736827488858326, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115921879316260116, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+      propertyPath: m_MaxValue
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115921879316260116, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+      propertyPath: m_MinValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921368333383688569, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
