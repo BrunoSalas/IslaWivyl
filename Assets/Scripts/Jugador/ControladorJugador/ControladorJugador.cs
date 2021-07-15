@@ -294,6 +294,10 @@ public class ControladorJugador : MonoBehaviour
             modeloJugador.vida -= 0.9f;
             Morir();
         }
+        if(other.gameObject.CompareTag("Lanzallama")){
+            modeloJugador.vida -= 2f;
+            Morir();
+        }
     }
     public void Morir()
     {
