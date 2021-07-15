@@ -35,6 +35,7 @@ TagManager:
   - "AuraDa\xF1o"
   - DanoAura
   - SpawnTrampas
+  - Trampolin
   layers:
   - Default
   - TransparentFX

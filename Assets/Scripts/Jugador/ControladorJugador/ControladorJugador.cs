@@ -316,5 +316,17 @@ public class ControladorJugador : MonoBehaviour
         yield return new WaitForSeconds(1f);
         modeloJugador.UiManaguer.EFFDano.SetActive(false);
     }
-
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        switch (hit.gameObject.tag)
+        {
+            case "Trampolin":
+                movedire.y = 0.6f;
+                modeloJugador.anima.SetTrigger("Saltar");
+                break;
+            case "Piso":
+                movedire.y = 0f;
+                break;
+        }
+    }
 }
