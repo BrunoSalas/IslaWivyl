@@ -11,10 +11,12 @@ public class SceneMaster : MonoBehaviour
     public GameObject menuDePausa;
     public static int continueValue = 1;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        //QualitySettings.SetQualityLevel("Low", true);
     }
 
     // Update is called once per frame
@@ -33,6 +35,8 @@ public class SceneMaster : MonoBehaviour
         }
 
     }
+
+
 
     public void ToGameplay()
     {

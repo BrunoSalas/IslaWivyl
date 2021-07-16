@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class UIManaguer : MonoBehaviour
 {
+    public int calidadValue;
     public Slider barraDeSalud;
+    public Slider calidad;
     public ModeloJugador mJ;
     public GameObject teclaInteractuar;
     public PowerDucks pD;
@@ -31,7 +33,20 @@ public class UIManaguer : MonoBehaviour
         ActualizarBarraDeVida();
         ActualizarPatos();
     }
+    public void CambiarCalidad( )
+    {
+        QualitySettings.SetQualityLevel((int)calidad.value, true);
+    }
+    public void SetearValorCalidad()
+    {
+        PlayerPrefs.SetInt("Calidad", calidadValue);
+    }
 
+    public void AjusteInicialCalidad()
+    {
+        calidadValue = PlayerPrefs.GetInt("Calidad");
+        SetearValorCalidad();
+    }
     public void ActivarTeclaInteractuar()
     {
         teclaInteractuar.SetActive(true);
