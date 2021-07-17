@@ -321,7 +321,7 @@ public class ControladorJugador : MonoBehaviour
         switch (hit.gameObject.tag)
         {
             case "Trampolin":
-                movedire.y = 0.6f;
+                movedire.y = 0.4f;
                 modeloJugador.anima.SetTrigger("Saltar");
                 break;
             case "Piso":
