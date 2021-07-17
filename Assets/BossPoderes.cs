@@ -7,7 +7,9 @@ public class BossPoderes : MonoBehaviour
     public GameObject [] trampas;
     GameObject trampaEscogida;
     public GameObject piedras;
+    
     public float timer;
+    
     public int i;
     public AudioSource sonido;
     public Animator animator;
@@ -26,7 +28,7 @@ public class BossPoderes : MonoBehaviour
         timer += Time.deltaTime;
      
 
-            if (timer>6)
+            if (timer>10)
             {
                 timer = 0;
                 animator.SetTrigger ("Rugido");
@@ -38,20 +40,16 @@ public class BossPoderes : MonoBehaviour
 
 
     public void CrearPiedras (){
-        //GameObject piedrasTemporales = Instantiate(piedras);
-        //piedrasTemporales.transform.position = trampaEscogida.transform.position;
+       
+       
         for (i=0 ; i<trampas.Length; i++){
             trampaEscogida = trampas [i];
             GameObject piedrasTemporales = Instantiate(piedras);
             piedrasTemporales.transform.position = trampaEscogida.transform.position;
-            Destroy(piedrasTemporales, 5f);
+            Destroy (piedrasTemporales , 6.6f);
         }
+        
         
     }
 
-    void EscogerSpawn  (){
-        
-        
-        //trampaEscogida = trampas [0];
-    }
 }
