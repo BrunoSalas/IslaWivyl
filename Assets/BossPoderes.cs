@@ -7,6 +7,9 @@ public class BossPoderes : MonoBehaviour
     public GameObject [] trampas;
     GameObject trampaEscogida;
     public GameObject piedras;
+    public GameObject bola;
+    public GameObject bolaSpawn;
+    public bool lanzar = false;
     
     public float timer;
     
@@ -30,10 +33,17 @@ public class BossPoderes : MonoBehaviour
 
             if (timer>10)
             {
-                timer = 0;
+                
                 animator.SetTrigger ("Rugido");
                 sonido.Play();
                 CrearPiedras();
+                timer = 0;
+                lanzar = true;
+            }
+            if (timer>4 && lanzar == true)
+            {
+                SanMarquino();
+                lanzar = false;
             }
         
     }
@@ -48,8 +58,14 @@ public class BossPoderes : MonoBehaviour
             piedrasTemporales.transform.position = trampaEscogida.transform.position;
             Destroy (piedrasTemporales , 6.6f);
         }
-        
-        
+    }
+
+    public void SanMarquino ()
+    {
+        animator.SetTrigger ("Lanzamiento");
+        GameObject bolaTemporal = Instantiate (bola);
+        bolaTemporal.transform.position = bolaSpawn.transform.position;
+
     }
 
 }

@@ -36,6 +36,7 @@ TagManager:
   - DanoAura
   - SpawnTrampas
   - Trampolin
+  - Obstaculo
   layers:
   - Default
   - TransparentFX
