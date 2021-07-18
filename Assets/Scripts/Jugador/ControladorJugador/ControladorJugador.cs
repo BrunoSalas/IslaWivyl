@@ -32,20 +32,12 @@ public class ControladorJugador : MonoBehaviour
         modeloJugador = GetComponent<ModeloJugador>();
         powerDucks = GetComponent<PowerDucks>();
         modeloJugador.anima = GetComponent<Animator>();
+        velocidadCorrerMult = modeloJugador.velocidadMovCorrer;
 
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            velocidadCorrerMult = modeloJugador.velocidadMovCorrer;
-            modeloJugador.anima.SetBool("Corriendo", true);
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            velocidadCorrerMult = 1;
-            modeloJugador.anima.SetBool("Corriendo", false);
-        }
+
 
         UsoDePower();
         Trampas();
@@ -60,10 +52,12 @@ public class ControladorJugador : MonoBehaviour
         if (movHorizontal == 0 && movVertical == 0)
         {
             modeloJugador.pasos.SetActive(false);
+            modeloJugador.anima.SetBool("Corriendo", false);
         }
         else
         {
             modeloJugador.pasos.SetActive(true);
+            modeloJugador.anima.SetBool("Corriendo", true);
         }
         Vector3 direction = new Vector3(movHorizontal, 0, movVertical);
         Vector3 movement = transform.TransformDirection(direction);
