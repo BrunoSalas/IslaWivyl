@@ -9,18 +9,22 @@ public class BossPoderes : MonoBehaviour
     public GameObject piedras;
     public GameObject bola;
     public GameObject bolaSpawn;
-    public bool lanzar = false;
+    public bool lanzar;
     
     public float timer;
     
     public int i;
     public AudioSource sonido;
     public Animator animator;
+    public GameObject objetivo1;
+    public GameObject objetivo2;
+    public int numeroObjetivo;
     void Start()
     {
         trampas = GameObject.FindGameObjectsWithTag ("SpawnTrampas");
         sonido = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        lanzar = false;
 
         
     }
@@ -29,7 +33,13 @@ public class BossPoderes : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-     
+
+            if (lanzar == true)
+            {
+                BuscarObjetivo();
+                SanMarquino();
+                
+            }
 
             if (timer>10)
             {
@@ -38,12 +48,7 @@ public class BossPoderes : MonoBehaviour
                 sonido.Play();
                 CrearPiedras();
                 timer = 0;
-                lanzar = true;
-            }
-            if (timer>4 && lanzar == true)
-            {
-                SanMarquino();
-                lanzar = false;
+                //lanzar = true;
             }
         
     }
@@ -65,7 +70,26 @@ public class BossPoderes : MonoBehaviour
         animator.SetTrigger ("Lanzamiento");
         GameObject bolaTemporal = Instantiate (bola);
         bolaTemporal.transform.position = bolaSpawn.transform.position;
+        lanzar = false;
 
+    }
+
+    public void BuscarObjetivo ()
+    {
+        switch (numeroObjetivo){
+
+            case 1: 
+                objetivo1.SetActive(true);
+                //numeroObjetivo++;
+                Destroy(objetivo1,6f);
+                  
+            break;
+            case 2:
+                
+                objetivo2.SetActive(true);
+                //Destroy(objetivo2,20f);
+            break;
+         }
     }
 
 }

@@ -6,33 +6,38 @@ public class BolaSanMarquina : MonoBehaviour
 {
     public Transform objetivo;
     public float velocidad;
+    public BossPoderes lanzar;
+    
+
+    public int i;
     void Start()
     {
-        objetivo = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform>();
+        objetivo = GameObject.FindGameObjectWithTag ("Obstaculo").GetComponent<Transform>();
+        
     }
 
-    // Update is called once per frame
+   
     void Update()
     {    
-        transform.position = Vector3.MoveTowards (transform.position, objetivo.transform.position, velocidad * Time.deltaTime);
-        transform.up = objetivo.position - transform.position;    
+      
+            SanMarquinoActive(); 
+        
+        
     }
 
-    /*private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag ("Obstaculo")){
-            Debug.Log ("Pls");
-            Destroy(gameObject);
-        }
-        
-
-    }*/
-    private void OnTriggerExit(Collider other) {
-        if (other.gameObject.CompareTag ("Obstaculo")){
+   
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag ("Piso")){
             Debug.Log ("Pls");
             Destroy(gameObject);
             }
     }
     
+    
+    public void SanMarquinoActive (){
+        transform.position = Vector3.MoveTowards (transform.position, objetivo.transform.position, velocidad * Time.deltaTime);
+        transform.up = objetivo.position - transform.position;
+    }
 
 
 }

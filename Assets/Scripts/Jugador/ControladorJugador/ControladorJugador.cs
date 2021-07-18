@@ -15,6 +15,7 @@ public class ControladorJugador : MonoBehaviour
     private Transform groundCheck;
 
     public lav lavaTrigger;
+    public BossPoderes boss;
 
     Vector3 movedire;
     private float groundRad = 0.4f;
@@ -273,6 +274,17 @@ public class ControladorJugador : MonoBehaviour
         {
             
             modeloJugador.requisitoBool = false;
+        }
+        if (other.gameObject.CompareTag("Trigger1")){
+            Debug.Log ("Bruh");
+            boss.lanzar = true;
+            boss.numeroObjetivo = 1;
+            Destroy(other);
+        }
+        if (other.gameObject.CompareTag("Trigger2")){
+            boss.lanzar = true;
+            boss.numeroObjetivo = 2;
+            Destroy(other);
         }
 
     }
