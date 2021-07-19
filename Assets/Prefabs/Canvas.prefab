@@ -1721,7 +1721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bfaefc83ce852c54498394bc239851c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af3a7ba9d26d1f44884dd50b9ec1caa8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1933,7 +1933,6 @@ GameObject:
   m_Component:
   - component: {fileID: 80341633540457313}
   - component: {fileID: 1099033730646054919}
-  - component: {fileID: 959783050432712409}
   m_Layer: 5
   m_Name: Slider Calidad
   m_TagString: Untagged
@@ -2026,20 +2025,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &959783050432712409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870467069489320141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bba9b9d74d426442925b4b3e3ef775c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensibilidadRatonSlider: {fileID: 1099033730646054919}
-  inicializacion: 0
 --- !u!1 &2590383700411705413
 GameObject:
   m_ObjectHideFlags: 0

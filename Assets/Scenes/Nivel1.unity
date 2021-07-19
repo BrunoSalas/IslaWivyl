@@ -17665,9 +17665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2093366935bb74fa326e30a6bc55ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calidadValue: 0
   barraDeSalud: {fileID: 440454729}
-  calidad: {fileID: 0}
+  calidadSlider: {fileID: 835736827398971620}
   mJ: {fileID: 2125559585}
   teclaInteractuar: {fileID: 1311556429}
   pD: {fileID: 2125559580}
@@ -28754,6 +28753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausado: 0
   menuDePausa: {fileID: 121748986}
+  uiManaguer: {fileID: 0}
 --- !u!114 &1011359869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55917,6 +55917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausado: 0
   menuDePausa: {fileID: 121748986}
+  uiManaguer: {fileID: 0}
 --- !u!4 &2090802416
 Transform:
   m_ObjectHideFlags: 0
@@ -57437,6 +57438,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 896502431976419152, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
   m_PrefabInstance: {fileID: 835736827398971615}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &835736827398971620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1099033730646054919, guid: a512e36213f6002408c64ae3b2a26e2b, type: 3}
+  m_PrefabInstance: {fileID: 835736827398971615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7427264767830131345
 PrefabInstance:
   m_ObjectHideFlags: 0

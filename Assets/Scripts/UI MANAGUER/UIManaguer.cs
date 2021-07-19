@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class UIManaguer : MonoBehaviour
 {
-    public int calidadValue;
+    
     public Slider barraDeSalud;
-    public Slider calidad;
+    public Slider calidadSlider;
     public ModeloJugador mJ;
     public GameObject teclaInteractuar;
     public PowerDucks pD;
@@ -24,6 +24,8 @@ public class UIManaguer : MonoBehaviour
         //EFFVelocidad = GameObject.Find("Velocidad EFF");
         PrepararBarraDeVida();
         DesactivarTeclaInteractuar();
+        AjusteInicialCalidad();
+        
         
     }
 
@@ -33,19 +35,16 @@ public class UIManaguer : MonoBehaviour
         ActualizarBarraDeVida();
         ActualizarPatos();
     }
-    public void CambiarCalidad( )
+    public void CambiarValorCalidad()
     {
-        QualitySettings.SetQualityLevel((int)calidad.value, true);
-    }
-    public void SetearValorCalidad()
-    {
-        PlayerPrefs.SetInt("Calidad", calidadValue);
+        PlayerPrefs.SetInt("Calidad", (int) calidadSlider.value) ;
+        QualitySettings.SetQualityLevel((int)calidadSlider.value);
     }
 
     public void AjusteInicialCalidad()
     {
-        calidadValue = PlayerPrefs.GetInt("Calidad");
-        SetearValorCalidad();
+        calidadSlider.value = PlayerPrefs.GetInt("Calidad");
+        QualitySettings.SetQualityLevel((int)calidadSlider.value, true);
     }
     public void ActivarTeclaInteractuar()
     {
@@ -58,8 +57,7 @@ public class UIManaguer : MonoBehaviour
 
     public void ActualizarPatos()
     {
-        pato1Text.text = ("x" + pD.patos1);
-        pato2Text.text = ("x" + pD.patos2);
+
         pato3Text.text = ("x" + pD.patos3);
     }
     public void PrepararBarraDeVida()

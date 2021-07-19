@@ -44,23 +44,23 @@ public class AldeanoScript : MonoBehaviour
             {
                 case 1:
                     Debug.Log("1");
-                    ducks.patos1++;
-                    ducks.ActualizarPatos();
-                    Instantiate(patoCuraUp);
+                    //ducks.patos1++;
+                    //ducks.ActualizarPatos();
+                    //Instantiate(patoCuraUp);
                     StartCoroutine(RecogerAldeano());
                     break;
                 case 2:
                     Debug.Log("2");
-                    ducks.patos2++;
-                    ducks.ActualizarPatos();
-                    Instantiate(patoVelozUp);
+                    //ducks.patos2++;
+                    //ducks.ActualizarPatos();
+                    //Instantiate(patoVelozUp);
                     StartCoroutine(RecogerAldeano());
                     break;
                 case 3:
                     Debug.Log("3");
                     ducks.patos3++;
                     ducks.ActualizarPatos();
-                    Instantiate(patoMuroUp);
+                    Instantiate(patoVelozUp);
                     StartCoroutine(RecogerAldeano());
                     break;
                 case 4:

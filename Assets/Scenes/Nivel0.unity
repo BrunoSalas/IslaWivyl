@@ -13162,9 +13162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2093366935bb74fa326e30a6bc55ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calidadValue: 0
   barraDeSalud: {fileID: 1338906422}
-  calidad: {fileID: 1338906424}
+  calidadSlider: {fileID: 1338906424}
   mJ: {fileID: 1149167433}
   teclaInteractuar: {fileID: 1338906421}
   pD: {fileID: 1149167432}
@@ -13221,6 +13220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausado: 0
   menuDePausa: {fileID: 1979436341}
+  uiManaguer: {fileID: 0}
 --- !u!114 &1866463470
 MonoBehaviour:
   m_ObjectHideFlags: 0

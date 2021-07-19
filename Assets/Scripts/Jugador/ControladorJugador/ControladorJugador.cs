@@ -116,9 +116,9 @@ public class ControladorJugador : MonoBehaviour
             Debug.Log("PatoCurar");
             modeloJugador.UiManaguer.ActualizarPatos();
         }
-        if (Input.GetKeyDown(KeyCode.E) && (powerDucks.patosListos) && (powerDucks.patos2 > 0))
+        if (Input.GetKeyDown(KeyCode.E) && (powerDucks.patosListos) && (powerDucks.patos3 > 0))
         {
-            powerDucks.patos2--;
+            powerDucks.patos3--;
             StartCoroutine(powerDucks.patosCooldown());
             StartCoroutine(powerDucks.patoVeloz());
             modeloJugador.UiManaguer.ActualizarPatos();

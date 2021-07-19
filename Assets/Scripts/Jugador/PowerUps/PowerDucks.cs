@@ -88,11 +88,11 @@ public class PowerDucks : MonoBehaviour
 
     public void patoMuro()
     {
-        control.enabled = false;
+        /*control.enabled = false;
         gameObject.transform.position = new Vector3(transform.position.x, transform.position.y+2, transform.position.z);
         GameObject muro = Instantiate(modeloJugador.muroPrefab);
         muro.transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
-        control.enabled = true;
+        control.enabled = true;*/
 
     }
     public void ResetPatos()

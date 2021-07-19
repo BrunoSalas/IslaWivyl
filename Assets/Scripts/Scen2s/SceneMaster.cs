@@ -10,12 +10,13 @@ public class SceneMaster : MonoBehaviour
     public bool pausado = false;
     public GameObject menuDePausa;
     public static int continueValue = 1;
+    public UIManaguer uiManaguer;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        uiManaguer = GameObject.Find("UI Managuer").GetComponent<UIManaguer>();
         //QualitySettings.SetQualityLevel("Low", true);
     }
 
@@ -97,6 +98,7 @@ public class SceneMaster : MonoBehaviour
         menuDePausa.SetActive(true);
         Time.timeScale = 0f;
         pausado = true;
+        uiManaguer.calidadSlider.value = PlayerPrefs.GetInt("Calidad");
     }
 
     public void Resumir()
@@ -105,6 +107,7 @@ public class SceneMaster : MonoBehaviour
         menuDePausa.SetActive(false);
         Time.timeScale = 1f;
         pausado = false;
+        uiManaguer.CambiarValorCalidad();
     }
     
     public void Escribir()
