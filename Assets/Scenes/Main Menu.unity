@@ -154,6 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausado: 0
   menuDePausa: {fileID: 0}
+  uiManaguer: {fileID: 0}
+  escenasJuego: 0
 --- !u!4 &180101596
 Transform:
   m_ObjectHideFlags: 0

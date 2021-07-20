@@ -11,30 +11,35 @@ public class SceneMaster : MonoBehaviour
     public GameObject menuDePausa;
     public static int continueValue = 1;
     public UIManaguer uiManaguer;
+    public bool escenasJuego;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        uiManaguer = GameObject.Find("UI Managuer").GetComponent<UIManaguer>();
-        //QualitySettings.SetQualityLevel("Low", true);
+        if (escenasJuego)
+        {
+            uiManaguer = GameObject.Find("UI Managuer").GetComponent<UIManaguer>();
+            //QualitySettings.SetQualityLevel("Low", true);
+        }
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+    {if (escenasJuego)
         {
-            if (pausado)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resumir();
-            }
-            else
-            {
-                Pausar();
+                if (pausado)
+                {
+                    Resumir();
+                }
+                else
+                {
+                    Pausar();
+                }
             }
         }
-
     }
 
 

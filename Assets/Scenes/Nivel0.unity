@@ -13419,6 +13419,7 @@ MonoBehaviour:
   pausado: 0
   menuDePausa: {fileID: 1979436341}
   uiManaguer: {fileID: 0}
+  escenasJuego: 1
 --- !u!114 &1866463470
 MonoBehaviour:
   m_ObjectHideFlags: 0
