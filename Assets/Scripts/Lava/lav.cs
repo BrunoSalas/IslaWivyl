@@ -24,7 +24,7 @@ public class lav : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
       
         if (sceneMaster.pausado == false)

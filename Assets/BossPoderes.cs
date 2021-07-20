@@ -18,6 +18,13 @@ public class BossPoderes : MonoBehaviour
     public Animator animator;
     public GameObject objetivo1;
     public GameObject objetivo2;
+    public GameObject objetivo3;
+    public GameObject objetivo4;
+    public GameObject objetivo5;
+    public GameObject objetivo6;
+    public GameObject objetivo7;
+    public GameObject objetivo8;
+    public GameObject objetivo9;
     public int numeroObjetivo;
     void Start()
     {
@@ -81,13 +88,48 @@ public class BossPoderes : MonoBehaviour
             case 1: 
                 objetivo1.SetActive(true);
                 //numeroObjetivo++;
-                Destroy(objetivo1,6f);
+                Destroy(objetivo1,4f);
                   
             break;
             case 2:
                 
                 objetivo2.SetActive(true);
-                //Destroy(objetivo2,20f);
+                Destroy(objetivo2,4f);
+            break;
+            
+            case 3:
+                objetivo3.SetActive(true);
+                Destroy(objetivo3,4f);
+            break;
+
+            case 4:
+                objetivo4.SetActive(true);
+                Destroy(objetivo4,4f);
+            break;
+
+            case 5:
+                objetivo5.SetActive(true);
+                Destroy(objetivo5,6f);
+            break;
+
+            case 6:
+                objetivo6.SetActive(true);
+                Destroy(objetivo6,6f);
+            break;
+
+            case 7:
+                objetivo7.SetActive(true);
+                Destroy(objetivo7,6f);
+            break;
+
+            case 8:
+                objetivo8.SetActive(true);
+                Destroy(objetivo8,6f);
+            break;
+
+            case 9:
+                objetivo9.SetActive(true);
+                Destroy(objetivo9,6f);
             break;
          }
     }

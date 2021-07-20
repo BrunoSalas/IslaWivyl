@@ -8,7 +8,6 @@ TagManager:
   - Trampa
   - Trampa1
   - Trampa2
-  - CheckPoint
   - TrampaFoso
   - GroundCheck
   - Aldeano
@@ -39,6 +38,13 @@ TagManager:
   - Obstaculo
   - Trigger1
   - Trigger2
+  - Trigger3
+  - Trigger4
+  - Trigger5
+  - Trigger6
+  - Trigger7
+  - Trigger8
+  - Trigger9
   layers:
   - Default
   - TransparentFX

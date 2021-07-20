@@ -171,17 +171,6 @@ public class ControladorJugador : MonoBehaviour
                     trampaManager.numeroTrampa = 3;
                 }
         */
-        if (other.gameObject.CompareTag("CheckPoint"))
-        {
-            modeloJugador.spawnPoint = modeloJugador.objCheckpoint.transform.position;
-        }
-
-        if (other.gameObject.CompareTag("RocaVolcanica"))
-        {
-            modeloJugador.maximaVida = modeloJugador.maximaVida - 100;
-            Morir();
-        }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -216,6 +205,10 @@ public class ControladorJugador : MonoBehaviour
             trampaManager.numeroTrampa = 3;
             Destroy(other);
             Debug.Log("Chino");
+        }
+        if(other.gameObject.CompareTag("RocaVolcanica")){
+            modeloJugador.vida -=100;
+            Morir();
         }
     }
 
@@ -284,6 +277,41 @@ public class ControladorJugador : MonoBehaviour
         if (other.gameObject.CompareTag("Trigger2")){
             boss.lanzar = true;
             boss.numeroObjetivo = 2;
+            Destroy(other);
+        }
+        if (other.gameObject.CompareTag("Trigger3")){
+            boss.lanzar = true;
+            boss.numeroObjetivo = 3;
+            Destroy(other);
+        }
+        if (other.gameObject.CompareTag("Trigger4")){
+            boss.lanzar = true;
+            boss.numeroObjetivo = 4;
+            Destroy(other);
+        }
+        if (other.gameObject.CompareTag("Trigger5")){
+            boss.lanzar = true;
+            boss.numeroObjetivo = 5;
+            Destroy(other);
+        }
+        if (other.gameObject.CompareTag("Trigger6")){
+            boss.lanzar = true;
+            boss.numeroObjetivo = 6;
+            Destroy(other);
+        }
+        if (other.gameObject.CompareTag("Trigger7")){
+            boss.lanzar = true;
+            boss.numeroObjetivo = 7;
+            Destroy(other);
+        }
+        if (other.gameObject.CompareTag("Trigger8")){
+            boss.lanzar = true;
+            boss.numeroObjetivo = 8;
+            Destroy(other);
+        }
+        if (other.gameObject.CompareTag("Trigger9")){
+            boss.lanzar = true;
+            boss.numeroObjetivo = 9;
             Destroy(other);
         }
 
