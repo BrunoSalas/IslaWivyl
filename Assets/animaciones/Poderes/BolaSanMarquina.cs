@@ -22,31 +22,19 @@ public class BolaSanMarquina : MonoBehaviour
     void Update()
     {    
       
-            SanMarquinoActive(); 
-        
-        
+            SanMarquinoActive();
     }
 
-   
-    /*private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag ("Piso")){
-            Debug.Log ("Pls");
-            Destroy(gameObject);
-            }
-    }*/
-    
     
     public void SanMarquinoActive (){
         transform.position = Vector3.MoveTowards (transform.position, objetivo.transform.position, velocidad * Time.deltaTime);
         transform.up = objetivo.position - transform.position;
     }
 
-    private void OnTriggerEnter(Collider other) {
-        Debug.Log ("TriggerPiso");
-        if(other.gameObject.CompareTag ("Piso")){
-            esferaCollider.isTrigger = false;
-        }    
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.CompareTag("Piso")){
+            Debug.Log ("Gaaaaa");
+        }
     }
-
 
 }

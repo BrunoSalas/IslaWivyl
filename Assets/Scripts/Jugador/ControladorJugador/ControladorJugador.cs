@@ -204,7 +204,7 @@ public class ControladorJugador : MonoBehaviour
         {
             trampaManager.numeroTrampa = 3;
             Destroy(other);
-            Debug.Log("Chino");
+            
         }
         if(other.gameObject.CompareTag("RocaVolcanica")){
             modeloJugador.vida -=100;
@@ -269,7 +269,7 @@ public class ControladorJugador : MonoBehaviour
             modeloJugador.requisitoBool = false;
         }
         if (other.gameObject.CompareTag("Trigger1")){
-            Debug.Log ("Bruh");
+            
             boss.lanzar = true;
             boss.numeroObjetivo = 1;
             Destroy(other);
@@ -314,6 +314,11 @@ public class ControladorJugador : MonoBehaviour
             boss.numeroObjetivo = 9;
             Destroy(other);
         }
+         if (other.gameObject.CompareTag("Trigger10")){
+            boss.lanzar = true;
+            boss.numeroObjetivo = 10;
+            Destroy(other);
+        }
 
     }
     private void OnTriggerStay(Collider other)
@@ -329,7 +334,7 @@ public class ControladorJugador : MonoBehaviour
             Morir();
         }
         if(other.gameObject.CompareTag("Lanzallama")){
-            modeloJugador.vida -= 2f;
+            modeloJugador.vida -= 5.3f;
             Morir();
         }
     }
